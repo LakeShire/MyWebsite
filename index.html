@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HeartStone</title>
+    <link href="bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="mystyle.css" rel="stylesheet">
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+
+    <script>
+        AV.initialize('vcSpAshahIOeaJNRAVoIvS0B', 'j3wxB1zSASzuGqOrbtzYHNnI');
+        var Card = AV.Object.extend("Card");
+        angular.module('heartstone', []).controller('CardCtrl', function($scope) {
+            $scope.items = [];
+//            $scope.items = [
+//                {name:'奥术智慧',desc:'抽两张牌',cost:'3',cata:'法师 法术',ravity:'普通'},
+//                {name:'激活',desc:'获得两个法力水晶',cost:'0',cata:'德鲁伊 法术',ravity:'普通'},
+//                {name:'战争古树',desc:'5/5 抉择：+5生命或+5攻击',cost:'7',cata:'德鲁伊 生物',ravity:'史诗'},
+//                {name:'真言术·盾',desc:'+2生命 抽一张牌',cost:'1',cata:'牧师 法术',ravity:'普通'},
+//                {name:'真银圣剑',desc:'4攻击 2耐久 攻击时恢复2点生命',cost:'4',cata:'圣骑士 武器',ravity:'精良'},
+//                {name:'爆炸陷阱',desc:'英雄受到攻击时对所有敌方随从造成2点伤害',cost:'2',cata:'猎人 奥秘',ravity:'普通'},
+//                {name:'背刺',desc:'对未受伤的随从造成2点伤害',cost:'0',cata:'潜行者 法术',ravity:'普通'},
+//                {name:'无羁元素',desc:'2/4 每使用一张过载牌，得到+2/+2',cost:'3',cata:'萨满 元素',ravity:'精良'},
+//                {name:'斩杀',desc:'消灭一个受伤随从',cost:'1',cata:'战士 法术',ravity:'普通'},
+//                {name:'小鬼首领',desc:'3/5 受到攻击时召唤一个1/1的小鬼',cost:'3',cata:'术士 恶魔',ravity:'普通'},
+//                {name:'长鬃草原狮',desc:'6/5 亡语：召唤两个2/2的土狼',cost:'6',cata:'猎人 野兽',ravity:'精良'},
+//            ];
+            $scope.criteria = null;
+            $scope.addPanel = false;
+            $scope.getItemWithRavity = function(item) {
+                if ($scope.criteria == null || $scope.criteria == '') {
+                    return true;
+                } else {
+                    return item.ravity == $scope.criteria;
+                }
+            };
+
+            $scope.addCost = 1;
+            $scope.addName = '';
+            $scope.addDescription = '';
+            $scope.addType = '';
+            $scope.addRavity = '';
+
+            $scope.field = 'cost';
+            $scope.reverse = true;
+            $scope.pageSize = 5;
+            $scope.currentPage = 1;
+            $scope.totalPage = Math.ceil($scope.items.length / $scope.pageSize);
+            $scope.pages = [];
+            $scope.endPage = 1;
+            $scope.sort = function(field) {
+                if ($scope.field == field) {
+                    $scope.reverse = !$scope.reverse;
+                } else {
+                    $scope.field = field;
+                    $scope.reverse = false;
+                }
+            };
+            $scope.isSortUp = function(field) {
+                return $scope.field == field && !$scope.reverse;
+            };
+            $scope.isSortDown = function(field) {
+                return $scope.field == field && $scope.reverse;
+            };
+            $scope.load = function() {
+                var i;
+                $scope.totalPage = Math.ceil($scope.items.length / $scope.pageSize);
+                $scope.endPage = $scope.totalPage;
+                for (i = 0; i < $scope.totalPage; i++) {
+                    $scope.pages.push(i + 1);
+                }
+                $scope.$apply();
+            };
+            $scope.next = function () {
+                if ($scope.currentPage < $scope.totalPage) {
+                    $scope.currentPage++;
+                }
+            };
+            $scope.prev = function () {
+                if ($scope.currentPage > 1) {
+                    $scope.currentPage--;
+                }
+            };
+            $scope.loadPage = function (page) {
+                $scope.currentPage = page;
+            };
+            $scope.isSelect = function(page) {
+                return $scope.currentPage == page;
+            };
+            $scope.init = function() {
+                var query = new AV.Query(Card);
+                query.find({
+                    success: function(results) {
+                        // 处理返回的结果数据
+                        for (var i = 0; i < results.length; i++) {
+                            var object = results[i];
+                            var item = {};
+                            item.name = object.get('name');
+                            item.desc = object.get('desc');
+                            item.cost = object.get('cost');
+                            item.ravity = object.get('ravity');
+                            $scope.items[i] = item;
+                        }
+                        $scope.load();
+                    },
+                    error: function(error) {
+                        alert("Error: " + error.code + " " + error.message);
+                    }
+                });
+            };
+            $scope.togglePanel = function () {
+                $scope.addPanel = !$scope.addPanel;
+            };
+            $scope.setCost = function (cost) {
+                $scope.addCost = cost;
+            };
+            $scope.setRavity = function (ravity) {
+                $scope.addRavity = ravity;
+            }
+            $scope.saveCard = function () {
+                var card = new Card();
+                card.set('name', $scope.addName);
+                card.set('desc', $scope.addDescription);
+                card.set('cost', $scope.addCost);
+                card.set('ravity', $scope.addRavity);
+                card.save().then(function (card) {
+                    var item = {};
+                    item.name = $scope.addName;
+                    item.desc = $scope.addDescription;
+                    item.cost = $scope.addCost;
+                    item.ravity = $scope.addRavity;
+                    $scope.items.push(item);
+                    $scope.load();
+                    // 如何立即刷新页面
+                }, function (err) {
+                    alert('保存失败, ' + err.message);
+                });
+            }
+
+            $scope.init();
+        }).filter('pagination', function() {
+            return function(inputArray, selectedPage, pageSize) {
+                var start = (selectedPage - 1)* pageSize;
+                return inputArray.slice(start, start + pageSize);
+            }
+        });
+
+    </script>
+    <meta charset="UTF-8">
+</head>
+<body ng-app="heartstone">
+    <div ng-controller="CardCtrl" class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">卡牌</h3>
+        </div>
+        <div class="panel-body">
+            <div class="well">
+                <label>
+                    搜索： <input type="text" ng-model="criteria">
+                </label>
+            </div>
+            <div class="my-table">
+                <table class="small table table-bordered">
+                    <thead>
+                    <th>名称</th>
+                    <th>描述</th>
+                    <th ng-click="sort('cost')">费用<span ng-class="{'glyphicon glyphicon-chevron-up': isSortUp('cost'), 'glyphicon glyphicon-chevron-down': isSortDown('cost')}"></span></th>
+                    <th>类型</th>
+                    <th>稀有度</th>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in filteredItems = (items | filter:getItemWithRavity) | orderBy:field:reverse | pagination:currentPage:pageSize">
+                        <td class="fixed-td">{{item.name}}</td>
+                        <td class="extend-td">{{item.desc}}</td>
+                        <td class="fixed-td">{{item.cost}}</td>
+                        <td class="fixed-td">{{item.cata}}</td>
+                        <td class="fixed-td">{{item.ravity}}</td>
+                    </tr>
+                    <!--tr>
+                        <td colspan="5">
+                            Total: {{filteredItems.length}}
+                        </td>
+                    </tr>
+                    </tbody-->
+                </table>
+            </div>
+            <ul class="pagination" ng-show="totalPage>1">
+                <li ng-class="{true:'active'}[currentPage==1]"><a href="javascript:void(0)" ng-click="currentPage=1;">首页</a></li>
+                <li ng-class="{true:'disabled'}[currentPage==1]"><a href="javascript:void(0);" ng-click="prev()">上一页</a></li>
+                <li ng-repeat="page in pages" ng-class="{'active' : isSelect(page)}"><a href="javascript:void(0);" ng-click="loadPage(page)">{{ page }}</a></li>
+                <li ng-class="{true:'disabled'}[currentPage==totalPage]"><a href="javascript:void(0);" ng-click="next()">下一页</a></li>
+                <li ng-class="{true:'active'}[currentPage==totalPage]"><a href="javascript:void(0)" ng-click="currentPage=totalPage;">末页</a></li>
+            </ul>
+
+        </div>
+    </div>
+    <div ng-controller="CardCtrl" class="panel panel-primary">
+        <div class="panel-heading" ng-click="togglePanel()">
+            <h3 class="panel-title">添加卡牌</h3>
+        </div>
+        <div class="panel-body" ng-hide="!addPanel">
+            <div class="well">
+                <div class="row">
+                    <div class="col-md-1" style="text-align: center; height: 100%">
+                        <label>名称</label>
+                    </div>
+                    <div class="col-md-1">
+                        <input type="text" ng-model="addName">
+                    </div>
+                    <div class="col-md-10"></div>
+                </div>
+                <div class="row row-margin-top">
+                    <div class="col-md-1" style="text-align: center; height: 100%">
+                        <label>描述</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" style="width: 100%" ng-mode="addDescription">
+                    </div>
+                    <div class="col-md-9"></div>
+                </div>
+                <div class="row row-margin-top">
+                    <div class="col-md-1" style="text-align: center; height: 100%">
+                        <label>费用</label>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                {{addCost}}
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a href="#" ng-click="setCost(1)">1</a></li>
+                                <li><a href="#" ng-click="setCost(2)">2</a></li>
+                                <li><a href="#" ng-click="setCost(3)">3</a></li>
+                                <li><a href="#" ng-click="setCost(4)">4</a></li>
+                                <li><a href="#" ng-click="setCost(5)">5</a></li>
+                                <li><a href="#" ng-click="setCost(6)">6</a></li>
+                                <li><a href="#" ng-click="setCost(7)">7</a></li>
+                                <li><a href="#" ng-click="setCost(8)">8</a></li>
+                                <li><a href="#" ng-click="setCost(9)">9</a></li>
+                                <li><a href="#" ng-click="setCost(10)">10</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-10"></div>
+                </div>
+                <div class="row row-margin-top">
+                    <div class="col-md-1" style="text-align: center; height: 100%">
+                        <label>类型</label>
+                    </div>
+                    <div class="col-md-1">
+                        <input type="text" ng-model="addType">
+                    </div>
+                    <div class="col-md-10"></div>
+                </div>
+                <div class="row row-margin-top">
+                    <div class="col-md-1" style="text-align: center; height: 100%">
+                        <label>稀有度</label>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-default" ng-click="setRavity('普通')">普通</button>
+                            <button type="button" class="btn btn-default" ng-click="setRavity('稀有')">稀有</button>
+                            <button type="button" class="btn btn-default" ng-click="setRavity('史诗')">史诗</button>
+                            <button type="button" class="btn btn-default" ng-click="setRavity('传说')">传说</button>
+                        </div>
+                    </div>
+                    <div class="col-md-8"></div>
+                </div>
+                <div class="row row-margin-top">
+                    <div class="col-md-1" style="text-align: center; height: 100%">
+                    </div>
+                    <div class="col-md-2">
+                        <button style="width: 100%" type="button" class="btn btn-primary" ng-click="saveCard()">添加</button>
+                    </div>
+                    <div class="col-md-9"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

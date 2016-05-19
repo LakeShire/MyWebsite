@@ -2,6 +2,8 @@
  * Created by nali on 2016/5/19.
  */
 
+var express = require('express');
+var router = express.Router();
 var crypto = require("crypto");
 
 function isLegel(signature, timestamp, nonce, token){
@@ -28,7 +30,7 @@ router.get('/', function(req, res, next) {
     var nonce = req.param('nonce');
     var echostr = req.param('echostr');
     var token = 'lakeshire';
-    
+
     console.log('weixin verify');
     console.log('signature: ' + signature);
     console.log('timestamp: ' + timestamp);

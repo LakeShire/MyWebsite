@@ -1,8 +1,28 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html, body { height:100%; overflow:hidden;}
+
+body { overflow:auto}
+
+.logon-box {
+  width:20%;
+  height:30%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 35%;
 }
 
-a {
-  color: #00B7FF;
+.btn-logon {
+  width: 80%;
+  left: 10%;
+  position: relative;
+}
+
+.btn-register {
+  width: 45%;
+}
+
+.table-logon-btn {
+  width: 100%;
+  margin-top: 10%;
+  position: relative;
 }

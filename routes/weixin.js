@@ -30,12 +30,6 @@ router.get('/', function(req, res, next) {
     var nonce = req.param('nonce');
     var echostr = req.param('echostr');
     var token = 'lakeshire';
-
-    console.log('weixin verify');
-    console.log('signature: ' + signature);
-    console.log('timestamp: ' + timestamp);
-    console.log('nonce: ' + nonce);
-    console.log('echostr: ' + echostr);
     if (isLegel(signature, timestamp, nonce, token)) {
         res.send(echostr);
     }

@@ -3,20 +3,22 @@ html, body { height:100%; overflow:hidden;}
 body { overflow:auto}
 
 .logon-box {
-  margin-top: 30%;
+  margin-top: 35%;
+  width: 100%;
+  position: relative;
+  height: 30%;
 }
 
-@media screen and (min-width:500px){
+@media screen and (min-width:400px){
   .logon-box {
     left: 30%;
     width: 40%;
-    position: relative;
+    max-width: 400px;
   }
 }
 
 .btn-logon {
-  width: 80%;
-  left: 10%;
+  width: 100%;
   position: relative;
 }
 

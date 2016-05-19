@@ -8,32 +8,40 @@
     <title></title>
 </head>
 <body>
-    <div class="logon-box well">
-        <form role="form">
-            <div class="form-group">
-                <label for="name">用户名</label>
-                <input type="text" class="form-control" id="name" placeholder="请输入用户名">
+<div class="container">
+    <div class="row logon-box" style="margin-top: 30%">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="well">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="name">用户名</label>
+                        <input type="text" class="form-control" id="name" placeholder="请输入用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">密码</label>
+                        <input type="text" class="form-control" id="password" placeholder="请输入密码">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> 记住我
+                        </label>
+                    </div>
+                    <table class="table-logon-btn">
+                        <tr>
+                            <td>
+                                <button type="submit" class="btn btn-primary btn-logon">登录</button>
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-primary btn-logon">注册</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="password">密码</label>
-                <input type="text" class="form-control" id="password" placeholder="请输入密码">
-            </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"> 记住我
-                </label>
-            </div>
-            <table class="table-logon-btn">
-                <tr>
-                    <td>
-                        <button type="submit" class="btn btn-primary btn-logon">登录</button>
-                    </td>
-                    <td>
-                        <button type="submit" class="btn btn-primary btn-logon">注册</button>
-                    </td>
-                </tr>
-            </table>
-        </form>
+        </div>
+        <div class="col-md-4"></div>
     </div>
+</div>
 </body>
 </html>

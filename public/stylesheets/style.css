@@ -6,6 +6,14 @@ body { overflow:auto}
   margin-top: 30%;
 }
 
+@media screen and (min-width:500px){
+  .logon-box {
+    left: 30%;
+    width: 40%;
+    position: relative;
+  }
+}
+
 .btn-logon {
   width: 80%;
   left: 10%;

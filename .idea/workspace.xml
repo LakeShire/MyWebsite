@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a4a55b5-d327-4243-b6bf-83ef72567498" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/bootstrap.min.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap-3.3.6-dist/css/bootstrap.min.css" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bootstrap-3.3.6-dist/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/public/stylesheets/bootstrap-theme.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bootstrap-3.3.6-dist/css/bootstrap-theme.css.map" afterPath="$PROJECT_DIR$/public/stylesheets/bootstrap-theme.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bootstrap-3.3.6-dist/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/public/stylesheets/bootstrap-theme.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bootstrap-3.3.6-dist/css/bootstrap-theme.min.css.map" afterPath="$PROJECT_DIR$/public/stylesheets/bootstrap-theme.min.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bootstrap-3.3.6-dist/css/bootstrap.css" afterPath="$PROJECT_DIR$/public/stylesheets/bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bootstrap-3.3.6-dist/css/bootstrap.css.map" afterPath="$PROJECT_DIR$/public/stylesheets/bootstrap.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bootstrap-3.3.6-dist/css/bootstrap.min.css.map" afterPath="$PROJECT_DIR$/public/stylesheets/bootstrap.min.css.map" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bootstrap-3.3.6-dist/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bootstrap-3.3.6-dist/js/bootstrap.js" afterPath="$PROJECT_DIR$/public/javascripts/bootstrap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bootstrap-3.3.6-dist/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/public/javascripts/bootstrap.min.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/bootstrap-3.3.6-dist/js/npm.js" afterPath="$PROJECT_DIR$/public/javascripts/npm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/runConfigurations/bin_www.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations/bin_www.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/www" afterPath="$PROJECT_DIR$/bin/www" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.html" afterPath="$PROJECT_DIR$/views/index.html" />
     </list>
     <ignored path="MyWebsite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,7 +23,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -65,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="www" pinned="false" current-in-tab="false">
+      <file leaf-file-name="www" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/www">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+            <state relative-caret-position="240">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -163,13 +143,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bin/www" />
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/routes/weixin.js" />
         <option value="$PROJECT_DIR$/views/error.html" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/index.html" />
+        <option value="$PROJECT_DIR$/bin/www" />
       </list>
     </option>
   </component>
@@ -381,12 +361,12 @@
       <option name="presentableId" value="Default" />
       <updated>1463628371379</updated>
       <workItem from="1463628372836" duration="1416000" />
-      <workItem from="1463630048627" duration="8360000" />
+      <workItem from="1463630048627" duration="8665000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9776000" />
+    <option name="totallyTimeSpent" value="10081000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -495,22 +475,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/www">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/bootstrap.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -521,10 +485,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/www">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>

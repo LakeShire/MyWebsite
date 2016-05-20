@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form role="form" ng-submit="logon(user)">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label for="name">用户名</label>
+                    <input type="text" class="form-control" id="name" ng-model="user.name" placeholder="请输入用户名">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="text" class="form-control" id="password" ng-model="user.password" placeholder="请输入密码">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> 记住我
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4">
+                <button type="submit" class="btn btn-primary btn-logon">登录</button>
+            </div>
+        </div>
+    </form>
+    <div class="alert alert-info" style="margin-top: 10px" ng-show="passwordError || userNotExist">{{logonErrorMsg}}</div>
+</body>
+</html>

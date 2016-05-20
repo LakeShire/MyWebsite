@@ -3,7 +3,7 @@ html, body { height:100%; overflow:hidden;}
 body { overflow:auto}
 
 .logon-box {
-  margin-top: 35%;
+  margin-top: 20%;
   width: 100%;
   position: relative;
   height: 30%;
@@ -13,21 +13,17 @@ body { overflow:auto}
   .logon-box {
     left: 30%;
     width: 40%;
-    max-width: 400px;
+    min-width: 400px;
+    max-width: 300px;
   }
 }
 
 .btn-logon {
   width: 100%;
   position: relative;
+  margin-top: 10%;
 }
 
 .btn-register {
   width: 45%;
-}
-
-.table-logon-btn {
-  width: 100%;
-  margin-top: 10%;
-  position: relative;
 }

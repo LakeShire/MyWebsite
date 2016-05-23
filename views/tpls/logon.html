@@ -5,20 +5,22 @@
     <title>Title</title>
 </head>
 <body>
-    <form role="form" ng-submit="logon(user)">
+    <form name="LogonForm" role="form" ng-submit="logon(user)">
         <div class="row">
             <div class="col-xs-12">
                 <div class="form-group">
-                    <label for="name">用户名</label>
-                    <input type="text" class="form-control" id="name" ng-model="user.name" placeholder="请输入用户名">
+                    <label>用户名</label>
+                    <input type="text" class="form-control" name="name" ng-model="user.name" placeholder="请输入用户名" ng-blur="onBlurName()" required>
+                    <div class="alert alert-info" style="margin-top: 10px" ng-show="showError(LogonForm.name, 'required') && shouldShowName">请输入用户名</div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-12">
                 <div class="form-group">
-                    <label for="password">密码</label>
-                    <input type="text" class="form-control" id="password" ng-model="user.password" placeholder="请输入密码">
+                    <label>密码</label>
+                    <input type="password" class="form-control" name="password" ng-model="user.password" placeholder="请输入密码" ng-blur="onBlurPassword()" required>
+                    <div class="alert alert-info" style="margin-top: 10px" ng-show="showError(LogonForm.password, 'required') && shouldShowPassword">请输入密码</div>
                 </div>
             </div>
         </div>

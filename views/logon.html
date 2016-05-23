@@ -1,0 +1,37 @@
+<div class="container" ng-controller="LogonCtrl">
+    <div class="logon-box">
+        <div class="panel panel-default">
+            <ul class="nav nav-pills nav-justified" >
+                <li ng-class="{'active' : isLogonMode()}"><a href="#/logon_main/logon">登录</a></li>
+                <li ng-class="{'active' : !isLogonMode()}"><a href="#/logon_main/register">注册</a></li>
+            </ul>
+            <div class="panel-body">
+                <div ng-include="selectedRoute.tplUrl"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h1 class="modal-title" id="myModalLabel">
+                        注册成功
+                    </h1>
+                </div>
+                <div class="modal-body">
+                    注册成功!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" ng-click="closeWindow()">
+                        关闭
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

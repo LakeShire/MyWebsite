@@ -10,8 +10,8 @@
             <div class="col-xs-12">
                 <div class="form-group">
                     <label>用户名</label>
-                    <input type="text" class="form-control" name="name" ng-model="register_user.name" placeholder="请输入用户名" required>
-                    <div class="alert alert-info" style="margin-top: 10px" ng-show="showError(RegisterForm.name, 'required')">请输入用户名</div>
+                    <input type="text" class="form-control" name="name" ng-model="register_user.name" ng-blur="onBlurRName()" placeholder="请输入用户名" required>
+                    <div class="alert alert-info" style="margin-top: 10px" ng-show="showError(RegisterForm.name, 'required') && shouldShowRName">请输入用户名</div>
                 </div>
             </div>
         </div>
@@ -19,8 +19,8 @@
             <div class="col-xs-12">
                 <div class="form-group">
                     <label>邮箱</label>
-                    <input type="email" class="form-control" name="email" ng-model="register_user.email" placeholder="请输入电子邮箱" required>
-                    <div class="alert alert-info" style="margin-top: 10px" ng-show="showError(RegisterForm.email, 'required')">请输入电子邮箱</div>
+                    <input type="email" class="form-control" name="email" ng-model="register_user.email" ng-blur="onBlurREmail()" placeholder="请输入电子邮箱" required>
+                    <div class="alert alert-info" style="margin-top: 10px" ng-show="showError(RegisterForm.email, 'required') && shouldShowREmail">请输入电子邮箱</div>
                     <div class="alert alert-info" style="margin-top: 10px" ng-show="showError(RegisterForm.email, 'email')">电子邮箱的格式不正确</div>
                 </div>
             </div>
@@ -29,8 +29,8 @@
             <div class="col-xs-12">
                 <div class="form-group">
                     <label>密码</label>
-                    <input type="password" class="form-control" name="password" ng-model="register_user.password" placeholder="请输入密码" required>
-                    <div class="alert alert-info" style="margin-top: 10px" ng-show="showError(RegisterForm.password, 'required')">请输入密码</div>
+                    <input type="password" class="form-control" name="password" ng-model="register_user.password" ng-blur="onBlurRPassword()" placeholder="请输入密码" required>
+                    <div class="alert alert-info" style="margin-top: 10px" ng-show="showError(RegisterForm.password, 'required') && shouldShowRPassword">请输入密码</div>
                 </div>
             </div>
         </div>

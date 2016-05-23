@@ -5,11 +5,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
+var routes = require('./routes/main');
 var users = require('./routes/users');
 var weixin = require('./routes/weixin');
 var logon = require('./routes/logon');
 var register = require('./routes/register');
+var index = require('./routes/index');
+var logon_main = require('./routes/logon_main');
 
 var ejs = require('ejs');
 
@@ -34,6 +36,8 @@ app.use('/users', users);
 app.use('/weixin', weixin);
 app.use('/logon.html', logon);
 app.use('/register.html', register);
+app.use('/index.html', index);
+app.use('/logon_main.html', logon_main);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

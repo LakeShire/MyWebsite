@@ -15,14 +15,14 @@ angular.module('main', ['ngCookies']).controller('MainCtrl', function ($cookieSt
     $rootScope.user = $cookieStore.get('user');
 
     $scope.routes = {
-        '/index': 'index.html',
+        '/main': 'main.html',
         '/logon_main': 'logon_main.html',
         '/project' : 'project.html',
         '/issue' : 'issue.html',
         '/option/prepare' : 'option/prepare.html',
         '/option/action' : 'option/action.html',
         '/option/after' : 'option/after.html',
-        '/' : 'index.html'
+        '/' : 'main.html'
     };
     $scope.tplUrl = $scope.routes['/'];
     $scope.defaultTplUrl = $scope.routes['/'];
@@ -198,7 +198,7 @@ angular.module('main', ['ngCookies']).controller('MainCtrl', function ($cookieSt
                     $scope.passwordError = false;
                     $cookieStore.put("user", __user);
                     $rootScope.user = __user;
-                    $location.path('/index');
+                    $location.path('/main');
                     // getAllNotes($http, $rootScope.user);
                 }
             });

@@ -1,4 +1,50 @@
 <div ng-controller="IndexCtrl">
-    <h1>{{ item }}</h1>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <button class="btn btn-primary" ng-click="newItem()">
+                新建
+            </button>
+        </div>
+    </div>
+
+    <div class="row" >
+        <div class="col-xs-12 col-sm-2 scroll">
+            <div ng-repeat="note in notes" class="note" ng-click="onItemClicked(note)" ng-class="{'note-selected' : isSelected(note)}">
+                <h4>{{ note.title }}</h4>
+                <p>更新于 {{ note.createAt }}</p>
+                <p>{{ note.msg | trim:20}}</p>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-10">
+            <div class="panel panel-default">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <a ng-show="!isEditMode()" class="navbar-brand">{{ currentNote.title }}</a>
+                        <form class="navbar-form">
+                            <input type="text" ng-show="isEditMode()" ng-model="currentNote.title">
+                        </form>
+                    </div>
+                    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+
+                        <form class="navbar-form navbar-right" role="edit" ng-submit="edit()">
+                            <button type="submit" class="btn btn-primary navbar-right">
+                                {{ editButton }}
+                            </button>
+                        </form>
+
+                        <form class="navbar-form navbar-right" role="delete" ng-submit="delete()">
+                            <button type="submit" class="btn btn-primary navbar-right">
+                                删除
+                            </button>
+                        </form>
+                    </div>
+                </nav>
+                <div class="panel-body">
+                    <p ng-show="!isEditMode()" style="height: 600px">{{ currentNote.msg }}</p>
+                    <textarea ng-show="isEditMode()" ng-model="currentNote.msg" style="height: 600px; width: 100%;"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 

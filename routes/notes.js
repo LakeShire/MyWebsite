@@ -4,21 +4,22 @@ var util = require('util');
 var mongodb = require('mongodb');
 
 var server = new mongodb.Server('localhost', 27017, {auto_reconnect:true});
-var db = new mongodb.Db('user', server, {safe:true});
+var db = new mongodb.Db('notes', server, {safe:true});
 
 db.open(function (err, db) {
   if (!err) {
-    db.createCollection('user', {safe:true}, function(err, collection){
+    db.createCollection('notes', {safe:true}, function(err, collection){
       if (err) {
         console.log(err);
       } else {
         collection.find().toArray(function(err, docs){
-          console.log('======user======');
+          console.log('======notes======');
           console.log(docs);
         });
       }
     });
   } else {
+    
     console.log(err);
   }
 });
@@ -29,19 +30,49 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/add', function(req, res, next) {
-  user = req.body;
-  db.createCollection('user', {safe:true}, function(err, collection){
+  note = req.body;
+  db.createCollection('notes', {safe:true}, function(err, collection){
     if (err) {
       res.send('Error');
     } else {
-      collection.find({'name' : user.name}).toArray(function (err, docs) {
-        if (err || docs.length != 0) {
+      if (note._id == null) {
+        collection.insert(note);
+        res.send(note._id);
+      } else {
+        note._id = mongodb.ObjectId(note._id);
+        collection.save(note);
+        res.send(note._id);
+      }
+    }
+  });
+});
+
+router.get('/list/:user', function(req, res, next) {
+  db.createCollection('notes', {safe:true}, function(err, collection){
+    if (err) {
+      res.send('Error');
+    } else {
+      collection.find({'author' : req.params.user}).toArray(function (err, docs) {
+        console.log(docs);
+        if (err != null) {
           res.send('Error');
         } else {
-          collection.insert(user);
-          res.send('Add User OK');
+          console.log(docs);
+          res.send(docs);
         }
-      });
+      })
+    }
+  });
+});
+
+router.post('/delete', function(req, res, next) {
+  note = req.body;
+  console.log('======delete======')
+  db.createCollection('notes', {safe:true}, function(err, collection){
+    if (err) {
+      res.send('Error');
+    } else {
+      collection.remove({'_id' : mongodb.ObjectId(note._id)});
     }
   });
 });

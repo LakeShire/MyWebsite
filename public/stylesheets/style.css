@@ -27,3 +27,22 @@ body { overflow:auto}
 .btn-register {
   width: 45%;
 }
+
+div.scroll {
+  border-right: solid gray 1px;
+  height: 100%;
+  position: relative;
+  overflow: auto;
+  max-height: 800px;
+}
+
+.note {
+  height: 128px;
+  padding-left: 16px;
+  padding-top: 8px;
+  border-bottom: solid #d5d5d5 2px;
+}
+
+.note-selected {
+  background-color: #2aabd2;
+}

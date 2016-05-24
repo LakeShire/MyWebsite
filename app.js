@@ -12,6 +12,10 @@ var logon = require('./routes/logon');
 var register = require('./routes/register');
 var index = require('./routes/index');
 var logon_main = require('./routes/logon_main');
+var project = require('./routes/project');
+var issue = require('./routes/issue');
+var option = require('./routes/option');
+var notes = require('./routes/notes');
 
 var ejs = require('ejs');
 
@@ -38,6 +42,10 @@ app.use('/logon.html', logon);
 app.use('/register.html', register);
 app.use('/index.html', index);
 app.use('/logon_main.html', logon_main);
+app.use('/project.html', project);
+app.use('/issue.html', issue);
+app.use('/option', option);
+app.use('/notes', notes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

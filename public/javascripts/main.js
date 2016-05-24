@@ -2,30 +2,143 @@
  * Created by nali on 2016/5/23.
  */
 
-angular.module('main', ['ngCookies']).controller('MainCtrl', function ($cookieStore, $scope, $location) {
-    $scope.loggedOn = false;
+function removeByValue(arr, val) {
+    for(var i=0; i<arr.length; i++) {
+        if(arr[i] == val) {
+            arr.splice(i, 1);
+            break;
+        }
+    }
+}
+
+angular.module('main', ['ngCookies']).controller('MainCtrl', function ($cookieStore, $scope, $location, $rootScope, $http) {
+    $rootScope.user = $cookieStore.get('user');
 
     $scope.routes = {
         '/index': 'index.html',
-        '/logon_main': 'logon_main.html'
+        '/logon_main': 'logon_main.html',
+        '/project' : 'project.html',
+        '/issue' : 'issue.html',
+        '/option/prepare' : 'option/prepare.html',
+        '/option/action' : 'option/action.html',
+        '/option/after' : 'option/after.html',
+        '/' : 'index.html'
     };
-    $scope.tplUrl = $scope.routes['/logon_main'];
-    $scope.defaultTplUrl = $scope.routes['/logon_main'];
+    $scope.tplUrl = $scope.routes['/'];
+    $scope.defaultTplUrl = $scope.routes['/'];
+
+    $scope.isProject = function () {
+        if ($scope.tplUrl == 'project.html') {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+    $scope.isIssue = function () {
+        if ($scope.tplUrl == 'issue.html') {
+            return true;
+        } else {
+            return false;
+        }
+    };
 
     $scope.$watch(function () {
         return $location.path();
     }, function (newPath) {
-        $scope.tplUrl = $scope.routes[newPath] || $scope.defaultTplUrl;
+        path = newPath.substring(12, newPath.length);
+        if (path != 'logon' && path != 'register') {
+            $scope.tplUrl = $scope.routes[newPath] || $scope.defaultTplUrl;
+        }
     });
 
-    var user = $cookieStore.get('user');
-    if (user != null) {
-        $location.path('/index');
+    $scope.logout = function () {
+        $cookieStore.put('user', null);
+        $rootScope.user = null;
+        $location.path('/logon_main');
+    };
+
+    $scope.isLoggedOn = function () {
+        return $rootScope.user != null;
+    };
+}).controller('IndexCtrl', function ($scope, $cookieStore, $location, $rootScope, $http) {
+    if ($rootScope.user == null) {
+        $location.path('/logon_main');
+    } else {
+
     }
-}).controller('IndexCtrl', function ($scope, $cookieStore) {
-    var user = $cookieStore.get('user');
-    $scope.item = '用户: ' + user.name;
-}).controller('LogonCtrl', function ($scope, $location, $http, $cookieStore) {
+
+    $scope.mode = 'display';
+    $scope.editButton = '编辑';
+
+    $scope.notes = [];
+    $scope.currentNote = null;
+    
+    $scope.onItemClicked = function (note) {
+        $scope.currentNote = note;
+    };
+    
+    $scope.newItem = function () {
+        var date = new Date();
+        console.log(date.toLocaleString());
+        note = {title : '未命名', msg : '', author : $rootScope.user.name, createAt : date.toLocaleString()};
+        $scope.currentNote = note;
+        $scope.notes.splice(0, 0, note);
+        $scope.mode = 'edit';
+        $scope.editButton = '完成';
+        $scope.addNotes($rootScope.user, $scope.currentNote);
+    };
+    
+    $scope.isSelected = function (note) {
+        return note._id == $scope.currentNote._id;
+    };
+
+    $scope.edit = function () {
+        if ($scope.mode == 'display') {
+            $scope.mode = 'edit';
+            $scope.editButton = '完成'
+        } else {
+            $scope.mode = 'display';
+            $scope.editButton = '编辑';
+            $scope.addNotes($rootScope.user, $scope.currentNote);
+        }
+    };
+
+    $scope.delete = function () {
+        $scope.deleteNote($scope.currentNote);
+        removeByValue($scope.notes, $scope.currentNote);
+        $scope.currentNote = $scope.notes[0];
+    };
+
+    $scope.isEditMode = function () {
+        return $scope.mode == 'edit';
+    };
+
+    $scope.getAllNotes = function (user) {
+        $http.get("http://localhost/notes/list/" + user.name)
+            .success(function (data, status, headers, config) {
+                $scope.notes = data;
+                $scope.currentNote = $scope.notes[0];
+            });
+    };
+
+    $scope.addNotes = function (user, note) {
+        $http.post("http://localhost/notes/add", note)
+            .success(function (data, status, headers, config) {
+                console.log(data);
+                note._id = data;
+            });
+    };
+
+    $scope.deleteNote = function (note) {
+        $http.post("http://localhost/notes/delete", note)
+            .success(function (data, status, headers, config) {
+                console.log(data);
+            });
+    };
+    
+    $scope.getAllNotes($rootScope.user);
+}).controller('LogonCtrl', function ($scope, $location, $http, $cookieStore, $rootScope) {
     $scope.loggedOn = false;
 
     $scope.routes = {
@@ -40,8 +153,6 @@ angular.module('main', ['ngCookies']).controller('MainCtrl', function ($cookieSt
     $scope.$watch(function () {
         return $location.path();
     }, function (newPath) {
-        console.log('newPath: ' + newPath);
-        console.log('select: ' + ($scope.routes[newPath] || $scope.defaultTplUrl).tplUrl);
         $scope.selectedRoute = $scope.routes[newPath] || $scope.defaultTplUrl;
     });
 
@@ -73,8 +184,8 @@ angular.module('main', ['ngCookies']).controller('MainCtrl', function ($cookieSt
     };
 
     $scope.userNotExist = false;
-    $scope.logon = function (user) {
-        $http.post("http://localhost/users/logon", user)
+    $scope.logon = function (__user) {
+        $http.post("http://localhost/users/logon", __user)
             .success(function (data, status, headers, config) {
                 if (data == 'User not exist') {
                     $scope.userNotExist = true;
@@ -85,8 +196,10 @@ angular.module('main', ['ngCookies']).controller('MainCtrl', function ($cookieSt
                 } else {
                     $scope.userNotExist = false;
                     $scope.passwordError = false;
-                    $cookieStore.put("user", user);
+                    $cookieStore.put("user", __user);
+                    $rootScope.user = __user;
                     $location.path('/index');
+                    // getAllNotes($http, $rootScope.user);
                 }
             });
     };
@@ -118,4 +231,19 @@ angular.module('main', ['ngCookies']).controller('MainCtrl', function ($cookieSt
     $scope.closeWindow = function () {
         $('#myModal').modal('hide');
     };
+}).controller('ProjectCtrl', function ($scope, $location, $rootScope) {
+    if ($rootScope.user == null) {
+        $location.path('/logon_main');
+    }
+}).controller('IssueCtrl', function ($scope, $location, $rootScope) {
+    if ($rootScope.user == null) {
+        $location.path('/logon_main');
+    }
+}).filter('trim', function (limitToFilter) {
+    return function (input, limit) {
+        if (input.length > limit) {
+            return limitToFilter(input, limit - 3) + '...';
+        }
+        return input;
+    }
 });

@@ -2,6 +2,7 @@
 <html lang="en" ng-app="main">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
     <title></title>
     <script src="http://apps.bdimg.com/libs/angular.js/1.5.0-beta.0/angular.min.js"></script>
     <script src="http://apps.bdimg.com/libs/angular.js/1.5.0-beta.0/angular-route.min.js"></script>
@@ -13,6 +14,41 @@
     <script src="http://apps.bdimg.com/libs/angular.js/1.5.0-beta.0/angular-cookies.min.js"></script>
 </head>
 <body ng-controller="MainCtrl">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example-navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project Manager</a>
+        </div>
+        <div class="collapse navbar-collapse" id="example-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ng-class="{'active' : isProject()}"><a href="#/project">Project</a></li>
+                <li ng-class="{'active' : isIssue()}"><a href="#/issue">Issue</a></li>
+                <li ng-hide="true" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        Option <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/option/prepare">Prepare</a></li>
+                        <li><a href="#/option/action">Action</a></li>
+                        <li><a href="#/option/after">After</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="navbar-text navbar-right">{{ user.name }}</p>
+
+            <form class="navbar-form navbar-right" role="logout" ng-submit="logout()">
+                <button type="submit" class="btn btn-default" ng-show="isLoggedOn()">
+                    退出
+                </button>
+            </form>
+        </div>
+    </nav>
     <div ng-include="tplUrl"></div>
 </body>
 </html>

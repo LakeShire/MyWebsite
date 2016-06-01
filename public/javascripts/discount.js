@@ -13,13 +13,31 @@ function removeByValue(arr, val) {
 
 var URL = 'http://localhost/';
 
-angular.module('discount', ['ngCookies']).controller('IndexCtrl', function ($cookieStore, $scope, $location, $rootScope, $http) {
+angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($cookieStore, $scope, $location, $rootScope, $http) {
 
     $scope.routes = {
         '/' : { url : 'info.html', mode : 'info' },
         '/info': { url : 'info.html', mode : 'info' },
         '/info/all' : { url : 'info.html', mode : 'info' },
         '/info/add' : { url : 'info.html', mode : 'info' }
+    };
+
+    $scope.tplRoute = $scope.routes['/'];
+    $scope.defaultRoute = $scope.routes['/'];
+
+    $scope.$watch(function () {
+        return $location.path();
+    }, function (newPath) {
+        $scope.tplRoute = $scope.routes[newPath] || $scope.defaultRoute;
+    });
+
+    $scope.isMode = function (mode) {
+        return $scope.tplRoute.mode == mode;
+    };
+}).controller('IndexCtrl', function ($cookieStore, $scope, $location, $rootScope, $http) {
+
+    $scope.routes = {
+        '/' : { url : 'info/all.html', mode : 'info' },
     };
 
     $scope.tplRoute = $scope.routes['/'];

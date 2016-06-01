@@ -17,7 +17,7 @@ var issue = require('./routes/issue');
 var option = require('./routes/option');
 var notes = require('./routes/notes');
 var profile = require('./routes/profile');
-
+var admin = require('./routes/admin');
 //  折扣信息
 var info = require('./routes/info');
 
@@ -53,6 +53,7 @@ app.use('/main.html', main);
 app.use('/profile', profile);
 app.use('/info.html', info);
 app.use('/info', info);
+app.use('/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

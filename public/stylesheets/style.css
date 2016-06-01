@@ -1,7 +1,7 @@
 html, body {
     width: 100%;
     height:100%;
-    overflow:hidden;
+    overflow: auto;
 }
 
 /*.logon-box {*/
@@ -133,6 +133,7 @@ html, body {
     background-color: #9acfea;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 #logo_pic {
@@ -144,10 +145,12 @@ html, body {
 #nav {
     background-color: white;
     align-items: flex-end;
+    height: 100%;
 }
 
 #user {
     background-color: #9acfea;
+    height: 100%;
 }
 
 #left_sidebar {
@@ -160,6 +163,7 @@ html, body {
 
 #right_sidebar {
     background-color: white;
+    height: 100%;
 }
 
 #side_nav {
@@ -173,6 +177,7 @@ html, body {
 
 .ad_section {
     height: 20%;
+    width: 100%;
     background-color: #0f0f0f;
     margin-top: 10%;
 }

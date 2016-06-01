@@ -16,6 +16,10 @@ var project = require('./routes/project');
 var issue = require('./routes/issue');
 var option = require('./routes/option');
 var notes = require('./routes/notes');
+var profile = require('./routes/profile');
+
+//  折扣信息
+var info = require('./routes/info');
 
 var ejs = require('ejs');
 
@@ -40,13 +44,15 @@ app.use('/users', users);
 app.use('/weixin', weixin);
 app.use('/logon.html', logon);
 app.use('/register.html', register);
-app.use('/index.html', index);
 app.use('/logon_main.html', logon_main);
 app.use('/project.html', project);
 app.use('/issue.html', issue);
 app.use('/option', option);
 app.use('/notes', notes);
 app.use('/main.html', main);
+app.use('/profile', profile);
+app.use('/info.html', info);
+app.use('/info', info);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,9 @@
+<div ng-controller="AllInfoCtrl" style="overflow: scroll">
+    <div ng-repeat="info in infos">
+        <h4>{{ info.title }}</h4>
+        <p>{{ info.start }} 到 {{ info.end }}</p>
+        <p>{{ info.tags }}</p>
+        <p>{{ info.description }}</p>
+        <a href="{{info.url}}">阅读原文</a>
+    </div>
+</div>

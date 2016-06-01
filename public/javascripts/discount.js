@@ -1,5 +1,5 @@
 /**
- * Created by nali on 2016/5/23.
+ * Created by nali on 2016/6/1.
  */
 
 function removeByValue(arr, val) {
@@ -13,136 +13,72 @@ function removeByValue(arr, val) {
 
 var URL = 'http://localhost/';
 
-angular.module('main', ['ngCookies']).controller('MainCtrl', function ($cookieStore, $scope, $location, $rootScope, $http) {
-    $rootScope.user = $cookieStore.get('user');
+angular.module('discount', ['ngCookies']).controller('IndexCtrl', function ($cookieStore, $scope, $location, $rootScope, $http) {
 
     $scope.routes = {
-        '/main': 'main.html',
-        '/logon_main': 'logon_main.html',
-        '/project' : 'project.html',
-        '/issue' : 'issue.html',
-        '/option/prepare' : 'option/prepare.html',
-        '/option/action' : 'option/action.html',
-        '/option/after' : 'option/after.html',
-        '/' : 'main.html',
-        '/profile' : 'profile'
-    };
-    $scope.tplUrl = $scope.routes['/'];
-    $scope.defaultTplUrl = $scope.routes['/'];
-
-    $scope.isProject = function () {
-        if ($scope.tplUrl == 'project.html') {
-            return true;
-        } else {
-            return false;
-        }
+        '/' : { url : 'info.html', mode : 'info' },
+        '/info': { url : 'info.html', mode : 'info' },
+        '/info/all' : { url : 'info.html', mode : 'info' },
+        '/info/add' : { url : 'info.html', mode : 'info' }
     };
 
-    $scope.isIssue = function () {
-        if ($scope.tplUrl == 'issue.html') {
-            return true;
-        } else {
-            return false;
-        }
-    };
+    $scope.tplRoute = $scope.routes['/'];
+    $scope.defaultRoute = $scope.routes['/'];
 
     $scope.$watch(function () {
         return $location.path();
     }, function (newPath) {
-        path = newPath.substring(12, newPath.length);
-        if (path != 'logon' && path != 'register') {
-            path = newPath.substring(9, newPath.length);
-            if (path != 'info' && path != 'settings') {
-                $scope.tplUrl = $scope.routes[newPath] || $scope.defaultTplUrl;
-            }
-        }
+        $scope.tplRoute = $scope.routes[newPath] || $scope.defaultRoute;
     });
 
-    $scope.logout = function () {
-        $cookieStore.put('user', null);
-        $rootScope.user = null;
-        $location.path('/logon_main');
+    $scope.isMode = function (mode) {
+        return $scope.tplRoute.mode == mode;
+    };
+}).controller('InfoCtrl', function ($scope, $location, $http, $cookieStore, $rootScope) {
+
+    $scope.routes = {
+        '/info' : { url : 'info/all.html', mode : 'all' },
+        '/info/all' : { url : 'info/all.html', mode : 'all' },
+        '/info/add' : { url : 'info/add.html', mode : 'add' }
     };
 
-    $scope.isLoggedOn = function () {
-        return $rootScope.user != null;
+    $scope.tplRoute = $scope.routes['/info'];
+    $scope.defaultRoute = $scope.routes['/info'];
+
+    $scope.$watch(function () {
+        return $location.path();
+    }, function (newPath) {
+        $scope.tplRoute = $scope.routes[newPath] || $scope.defaultRoute;
+    });
+
+    $scope.isMode = function (mode) {
+        return $scope.tplRoute.mode == mode;
     };
-}).controller('IndexCtrl', function ($scope, $cookieStore, $location, $rootScope, $http) {
+}).controller('AddInfoCtrl', function ($scope, $location, $rootScope, $http) {
+    $scope.info = null;
+
+    $scope.add = function (info) {
+        console.log(info.description);
+        $http.post(URL + 'info/add', info)
+            .success(function (data, status, headers, config) {
+                info._id = data;
+                $('#myModal').modal('show');
+            });
+    };
+}).controller('AllInfoCtrl', function ($scope, $location, $rootScope, $http) {
+    $scope.infos = null;
+
+    $scope.getAllInfos = function() {
+        $http.get(URL + 'info/all')
+            .success(function (data, status, headers, config) {
+                $scope.infos = data;
+            });
+    };
+    $scope.getAllInfos();
+}).controller('ProjectCtrl', function ($scope, $location, $rootScope) {
     if ($rootScope.user == null) {
         $location.path('/logon_main');
-    } else {
-
     }
-
-    $scope.mode = 'display';
-    $scope.editButton = '编辑';
-
-    $scope.notes = [];
-    $scope.currentNote = null;
-    
-    $scope.onItemClicked = function (note) {
-        $scope.currentNote = note;
-    };
-    
-    $scope.newItem = function () {
-        var date = new Date();
-        note = {title : '未命名', msg : '', author : $rootScope.user.name, createAt : date.toLocaleString()};
-        $scope.currentNote = note;
-        $scope.notes.splice(0, 0, note);
-        $scope.mode = 'edit';
-        $scope.editButton = '完成';
-        $scope.addNotes($rootScope.user, $scope.currentNote);
-    };
-    
-    $scope.isSelected = function (note) {
-        return note._id == $scope.currentNote._id;
-    };
-
-    $scope.edit = function () {
-        if ($scope.mode == 'display') {
-            $scope.mode = 'edit';
-            $scope.editButton = '完成'
-        } else {
-            $scope.mode = 'display';
-            $scope.editButton = '编辑';
-            $scope.addNotes($rootScope.user, $scope.currentNote);
-        }
-    };
-
-    $scope.delete = function () {
-        $scope.deleteNote($scope.currentNote);
-        removeByValue($scope.notes, $scope.currentNote);
-        $scope.currentNote = $scope.notes[0];
-    };
-
-    $scope.isEditMode = function () {
-        return $scope.mode == 'edit';
-    };
-
-    $scope.getAllNotes = function (user) {
-        $http.get(URL + 'notes/list/' + user.name)
-            .success(function (data, status, headers, config) {
-                $scope.notes = data;
-                $scope.currentNote = $scope.notes[0];
-            });
-    };
-
-    $scope.addNotes = function (user, note) {
-        $http.post(URL + 'notes/add', note)
-            .success(function (data, status, headers, config) {
-                console.log(data);
-                note._id = data;
-            });
-    };
-
-    $scope.deleteNote = function (note) {
-        $http.post(URL + 'notes/delete', note)
-            .success(function (data, status, headers, config) {
-                console.log(data);
-            });
-    };
-    
-    $scope.getAllNotes($rootScope.user);
 }).controller('LogonCtrl', function ($scope, $location, $http, $cookieStore, $rootScope) {
     $scope.loggedOn = false;
 

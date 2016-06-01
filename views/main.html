@@ -7,16 +7,22 @@
         </div>
     </div>
 
-    <div class="row" >
-        <div class="col-xs-12 col-sm-2 scroll">
+    <!--<div class="row">-->
+    <div style="height: 700px">
+        <div class="col-xs-12 col-md-2 col-lg-2 scroll">
             <div ng-repeat="note in notes" class="note" ng-click="onItemClicked(note)" ng-class="{'note-selected' : isSelected(note)}">
                 <h4>{{ note.title }}</h4>
-                <p>更新于 {{ note.createAt }}</p>
-                <p>{{ note.msg | trim:20}}</p>
+                <div>
+                    <p>更新于 {{ note.createAt }}</p>
+                </div>
+                <div>
+                    <p>{{ note.msg | trim:20}}</p>
+                </div>
+
             </div>
         </div>
-        <div class="col-xs-12 col-sm-10">
-            <div class="panel panel-default">
+        <div class="col-xs-12 col-md-10 col-lg-10" style="height: 100%;">
+            <div class="panel panel-default" style="height: 100%;">
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="navbar-header">
                         <a ng-show="!isEditMode()" class="navbar-brand">{{ currentNote.title }}</a>
@@ -39,9 +45,9 @@
                         </form>
                     </div>
                 </nav>
-                <div class="panel-body">
-                    <p ng-show="!isEditMode()" style="height: 600px">{{ currentNote.msg }}</p>
-                    <textarea ng-show="isEditMode()" ng-model="currentNote.msg" style="height: 600px; width: 100%;"></textarea>
+                <div class="panel-body" style="height: 100%">
+                    <p ng-show="!isEditMode()" style="height: 100%; position: relative;">{{ currentNote.msg }}</p>
+                    <textarea ng-show="isEditMode()" ng-model="currentNote.msg" style="height: 100%; width: 100%;"></textarea>
                 </div>
             </div>
         </div>

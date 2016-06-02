@@ -20,6 +20,8 @@ var profile = require('./routes/profile');
 var admin = require('./routes/admin');
 //  折扣信息
 var info = require('./routes/info');
+//  信息源
+var source = require('./routes/source');
 
 var ejs = require('ejs');
 
@@ -54,6 +56,8 @@ app.use('/profile', profile);
 app.use('/info.html', info);
 app.use('/info', info);
 app.use('/admin', admin);
+app.use('/source.html', source);
+app.use('/source', source);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -34,22 +34,53 @@ router.get('/all.html', function(req, res, next) {
   res.render('info/all', { title: 'Express' });
 });
 
+router.get('/view.html', function(req, res, next) {
+    res.render('info/view', { title: 'Express' });
+});
+
+router.get('/edit.html', function(req, res, next) {
+    res.render('info/edit', { title: 'Express' });
+});
+
 router.post('/add', function(req, res, next) {
-  info = req.body;
-  db.createCollection('notes', {safe:true}, function(err, collection){
-    if (err) {
-      res.send('Error');
-    } else {
-      if (info._id == null) {
-        collection.insert(info);
-        res.send(info._id);
+    info = req.body;
+    console.log(info);
+  db.createCollection('sources', {safe:true}, function(err, collection) {
+      if (err) {
+          res.send('Error');
       } else {
-        info._id = mongodb.ObjectId(info._id);
-        collection.save(info);
-        res.send(info._id);
+          collection.find({'name': info.source}).toArray(function (err, docs) {
+              console.log('get source where name is ' + info.source + ' : ');
+              console.log(docs);
+              if (err == null) {
+                  if (docs.length == 0) {
+                      source = {name: info.source, description: '', pic: ''};
+                      collection.insert(source);
+                  } else {
+                      source = docs[0];
+                  }
+
+                  console.log('source: ' + source);
+                  info.source = source;
+                  db.createCollection('notes', {safe: true}, function (err, collection) {
+                      if (err) {
+                          res.send('Error');
+                      } else {
+                          if (info._id == null) {
+                              collection.insert(info);
+                              res.send(info._id);
+                          } else {
+                              info._id = mongodb.ObjectId(info._id);
+                              collection.save(info);
+                              res.send(info._id);
+                          }
+                      }
+                  });
+              }
+          })
       }
-    }
   });
+
 });
 
 router.get('/all', function(req, res, next) {

@@ -1,0 +1,7 @@
+<div ng-controller="AllSourceCtrl">
+    <div ng-repeat="source in sources">
+        <h4>{{ source.name }}</h4>
+        <p>{{ source.description }}</p>
+        <img ng-src="{{ source.pic }} " style="width: 128px; height:128px"/>
+    </div>
+</div>

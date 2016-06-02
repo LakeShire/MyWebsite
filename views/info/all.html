@@ -1,9 +1,11 @@
 <div ng-controller="AllInfoCtrl">
-    <div ng-repeat="info in infos">
-        <h4>{{ info.title }}</h4>
-        <p>{{ info.start }} 到 {{ info.end }}</p>
-        <p>{{ info.tags }}</p>
-        <p>{{ info.description }}</p>
-        <a href="{{info.url}}">阅读原文</a>
-    </div>
+    <table class="table table-bordered">
+        <tbody ng-repeat="info in infos">
+            <tr>
+                <td>{{ info.title }}</td>
+                <td><a ng-click="setCurrentInfo(info)" href="#/info/view">查看</a></td>
+                <td><a ng-click="setCurrentInfo(info)" href="#/info/edit">编辑</a></td>
+            </tr>
+        </tbody>
+    </table>
 </div>

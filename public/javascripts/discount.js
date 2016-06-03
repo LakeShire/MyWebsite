@@ -158,7 +158,10 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
     }
 }).controller('EditInfoCtrl', function ($scope, $location, $rootScope, $http) {
     $scope.info = $rootScope.currentInfo;
-    $scope.info.source = $scope.info.source.name;
+
+    if ($scope.info.source != null) {
+        $scope.info.source = $scope.info.source.name;
+    }
 
     $scope.edit = function (info) {
         $http.post(URL + 'info/add', info)

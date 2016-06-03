@@ -1,0 +1,33 @@
+<div class="well" ng-controller="ViewSourceCtrl">
+    <form role="form" ng-submit="edit()">
+        <div id="legend" class="row">
+            <div class="col-md-10">
+                <legend class="">{{ source.name }}</legend>
+            </div>
+            <div class="col-md-2" style="display: flex; justify-content: center">
+                <button type="submit" class="btn btn-primary">编辑</button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>简介</label>
+            <p>{{ source.description}}</p>
+        </div>
+
+        <div class="form-group">
+            <label>图片</label>
+            <img ng-src="{{ source.pic }}" style="width: 32px; height:32px">
+        </div>
+    </form>
+    <table class="table table-bordered">
+        <tbody ng-repeat="info in infos">
+        <td style="display:table-cell; vertical-align:middle">{{ info.title }}</td>
+        <td style="display:table-cell; vertical-align:middle">{{ info.source.name }}</td>
+        <td style="display: flex; justify-content: space-around;">
+            <button class="btn btn-primary btn-sm" ng-click="viewInfo(info)">查看</button>
+            <button class="btn btn-primary btn-sm" ng-click="editInfo(info)">编辑</button>
+            <button class="btn btn-primary btn-sm" ng-click="deleteInfo(info)">删除</button>
+        </td>
+        </tbody>
+    </table>
+</div>

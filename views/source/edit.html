@@ -1,54 +1,30 @@
-<div class="well" ng-controller="EditInfoCtrl">
+<div class="well" ng-controller="EditSourceCtrl">
     <form role="form">
         <div id="legend" class="row">
             <div class="col-md-10">
             <legend class="">编辑信息</legend>
             </div>
             <div class="col-md-2" style="display: flex; justify-content: space-around">
-                <button class="btn btn-primary" ng-click="edit(info)">完成</button>
+                <button class="btn btn-primary" ng-click="edit(source)">完成</button>
                 <button class="btn btn-default" ng-click="cancel()">取消</button>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="title">标题</label>
-            <input type="text" class="form-control" id="title" placeholder="" ng-model="info.title">
+            <label for="name">名称</label>
+            <input type="text" class="form-control" id="name" placeholder="" ng-model="source.name">
         </div>
 
         <div class="form-group">
             <label>简介</label>
-            <textarea type="" class="form-control" ng-model="info.description" style="height: 200px;"> </textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="source">来源</label>
-            <input type="text" class="form-control" id="source" placeholder="" ng-model="info.source">
-        </div>
-
-        <div class="form-group">
-            <label for="start">起始时间</label>
-            <input type="text" class="form-control" id="start" placeholder="" ng-model="info.start">
-        </div>
-
-        <div class="form-group">
-            <label for="end">结束时间</label>
-            <input type="text" class="form-control" id="end" placeholder="" ng-model="info.end">
-        </div>
-
-        <div class="form-group">
-            <label for="tags">标签</label>
-            <input type="text" class="form-control" id="tags" placeholder="" ng-model="info.tags">
-        </div>
-
-        <div class="form-group">
-            <label for="url">原始网页</label>
-            <input type="text" class="form-control" id="url" placeholder="" ng-model="info.url">
+            <textarea type="" class="form-control" ng-model="source.description" style="height: 200px;"> </textarea>
         </div>
 
         <div class="form-group">
             <label for="pic">图片链接</label>
-            <input type="text" class="form-control" id="pic" placeholder="" ng-model="info.pic">
+            <input type="text" class="form-control" id="pic" placeholder="" ng-model="source.pic">
         </div>
+
     </form>
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
          aria-labelledby="myModalLabel" aria-hidden="true" style="height: 50%;">

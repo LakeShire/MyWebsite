@@ -6,18 +6,7 @@ var server = new mongodb.Server('localhost', 27017, {auto_reconnect:true});
 var db = new mongodb.Db('discount', server, {safe:true});
 
 db.open(function (err, db) {
-  if (!err) {
-    db.createCollection('source', {safe:true}, function(err, collection){
-      if (err) {
-        console.log(err);
-      } else {
-        collection.find().toArray(function(err, docs){
-          console.log('======source======');
-          console.log(docs);
-        });
-      }
-    });
-  } else {
+  if (err) {
     console.log(err);
   }
 });
@@ -32,6 +21,14 @@ router.get('/add.html', function(req, res, next) {
 
 router.get('/all.html', function(req, res, next) {
   res.render('source/all', { title: 'Express' });
+});
+
+router.get('/view.html', function(req, res, next) {
+    res.render('source/view', { title: 'Express' });
+});
+
+router.get('/edit.html', function(req, res, next) {
+    res.render('source/edit', { title: 'Express' });
 });
 
 router.post('/add', function(req, res, next) {
@@ -50,6 +47,18 @@ router.post('/add', function(req, res, next) {
       }
     }
   });
+});
+
+router.post('/delete', function(req, res, next) {
+    source = req.body;
+    db.createCollection('sources', {safe:true}, function(err, collection){
+        if (err) {
+            res.send('Error');
+        } else {
+            collection.remove({ '_id' : mongodb.ObjectId(source._id)});
+            res.send('remove ' + source._id);
+        }
+    });
 });
 
 router.get('/all', function(req, res, next) {

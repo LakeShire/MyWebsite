@@ -1,11 +1,13 @@
 <div ng-controller="AllInfoCtrl">
     <table class="table table-bordered">
         <tbody ng-repeat="info in infos">
-            <tr>
-                <td>{{ info.title }}</td>
-                <td><a ng-click="setCurrentInfo(info)" href="#/info/view">查看</a></td>
-                <td><a ng-click="setCurrentInfo(info)" href="#/info/edit">编辑</a></td>
-            </tr>
+            <td style="display:table-cell; vertical-align:middle">{{ info.title }}</td>
+            <td style="display:table-cell; vertical-align:middle">{{ info.source.name }}</td>
+            <td style="display: flex; justify-content: space-around;">
+                <button class="btn btn-primary btn-sm" ng-click="view(info)">查看</button>
+                <button class="btn btn-primary btn-sm" ng-click="edit(info)">编辑</button>
+                <button class="btn btn-primary btn-sm" ng-click="delete(info)">删除</button>
+            </td>
         </tbody>
     </table>
 </div>

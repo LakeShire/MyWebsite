@@ -13,8 +13,6 @@ db.open(function (err, db) {
         console.log(err);
       } else {
         collection.find().toArray(function(err, docs){
-          console.log('======user======');
-          console.log(docs);
         });
       }
     });

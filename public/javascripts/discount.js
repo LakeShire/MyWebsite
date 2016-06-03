@@ -25,6 +25,8 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
         '/source': { url : 'source.html', mode : 'source' },
         '/source/all' : { url : 'source.html', mode : 'source' },
         '/source/add' : { url : 'source.html', mode : 'source' },
+        '/source/view' : { url : 'source.html', mode : 'source' },
+        '/source/edit' : { url : 'source.html', mode : 'source' },
     };
 
     $scope.tplRoute = $scope.routes['/'];
@@ -89,32 +91,74 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
                 $('#myModal').modal('show');
             });
     };
+
+    $scope.cancel = function () {
+        $location.url('/');
+    };
 }).controller('AllInfoCtrl', function ($scope, $location, $rootScope, $http) {
     $scope.infos = new Array();
-
+    
     $scope.getAllInfos = function() {
         $http.get(URL + 'info/all')
             .success(function (data, status, headers, config) {
                 for (var i = 0; i < data.length; i++) {
                     info = data[i];
-                    info.ps = data[i].description.split('\n');
+                    if (data[i].description != null) {
+                        info.ps = data[i].description.split('\n');
+                    }
                     $scope.infos.push(info);
                 }
             });
     };
     $scope.getAllInfos();
 
+    $scope.getAllSources = function() {
+        $http.get(URL + 'source/all')
+            .success(function (data, status, headers, config) {
+                $scope.sources = data;
+            });
+    };
+    $scope.getAllSources();
+
     $scope.setCurrentInfo = function (info) {
       $rootScope.currentInfo = info;
+
     };
+
+    $scope.delete = function (info) {
+        $http.post(URL + 'info/delete', info)
+            .success(function (data, status, headers, config) {
+                removeByValue($scope.infos, info);
+                $('#myModal').modal('show');
+            });
+    };
+
+    $scope.view = function (info) {
+        $scope.setCurrentInfo(info);
+        $location.url('/info/view');
+    };
+
+    $scope.edit = function (info) {
+        $scope.setCurrentInfo(info);
+        $location.url('/info/edit');
+    }
 }).controller('ViewInfoCtrl', function ($scope, $location, $rootScope, $http) {
     $scope.info = $rootScope.currentInfo;
 
     if ($scope.info == null) {
-        $location.url(URL + 'info/');
+        $location.url('info/');
+    }
+
+    $scope.edit = function () {
+        $location.url('info/edit');
+    };
+
+    if ($scope.info != null && $scope.info.tags != null) {
+        $scope.tags = $scope.info.tags.split(",");
     }
 }).controller('EditInfoCtrl', function ($scope, $location, $rootScope, $http) {
     $scope.info = $rootScope.currentInfo;
+    $scope.info.source = $scope.info.source.name;
 
     $scope.edit = function (info) {
         $http.post(URL + 'info/add', info)
@@ -123,12 +167,18 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
                 $('#myModal').modal('show');
             });
     };
+
+    $scope.cancel = function () {
+        $location.url('/');
+    };
 }).controller('SourceCtrl', function ($scope, $location, $http, $cookieStore, $rootScope) {
 
     $scope.routes = {
         '/source' : { url : 'source/all.html', mode : 'all' },
         '/source/all' : { url : 'source/all.html', mode : 'all' },
-        '/source/add' : { url : 'source/add.html', mode : 'add' }
+        '/source/add' : { url : 'source/add.html', mode : 'add' },
+        '/source/edit' : { url : 'source/edit.html', mode : 'all' },
+        '/source/view' : { url : 'source/view.html', mode : 'add' }
     };
 
     $scope.tplRoute = $scope.routes['/source'];
@@ -153,16 +203,103 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
                 $('#myModal').modal('show');
             });
     };
+
+    $scope.cancel = function () {
+        $location.url('/source');
+    };
 }).controller('AllSourceCtrl', function ($scope, $location, $rootScope, $http) {
     $scope.sources = null;
 
-    $scope.getAllInfos = function() {
+    $scope.getAllSources = function() {
         $http.get(URL + 'source/all')
             .success(function (data, status, headers, config) {
                 $scope.sources = data;
             });
     };
+    $scope.getAllSources();
+
+    $scope.setCurrentSource = function (source) {
+        $rootScope.currentSource = source;
+    };
+
+    $scope.delete = function (source) {
+        $http.post(URL + 'source/delete', source)
+            .success(function (data, status, headers, config) {
+                removeByValue($scope.sources, source);
+                $('#myModal').modal('show');
+            });
+    };
+
+    $scope.view = function (source) {
+        $scope.setCurrentSource(source);
+        $location.url('/source/view');
+    };
+
+    $scope.edit = function (source) {
+        $scope.setCurrentSource(source);
+        $location.url('/source/edit');
+    }
+}).controller('EditSourceCtrl', function ($scope, $location, $rootScope, $http) {
+    $scope.source = $rootScope.currentSource;
+
+    $scope.edit = function (info) {
+        $http.post(URL + 'source/add', source)
+            .success(function (data, status, headers, config) {
+                source._id = data;
+                $('#myModal').modal('show');
+            });
+    };
+
+    $scope.cancel = function () {
+        $location.url('/source');
+    };
+}).controller('ViewSourceCtrl', function ($scope, $location, $rootScope, $http) {
+    $scope.source = $rootScope.currentSource;
+    $scope.infos = new Array();
+
+    if ($scope.source == null) {
+        $location.url('source/');
+    }
+
+    $scope.edit = function () {
+        $location.url('source/edit');
+    };
+
+    $scope.getAllInfos = function() {
+        $http.get(URL + 'info/infos?source=' + $scope.source.name)
+            .success(function (data, status, headers, config) {
+                for (var i = 0; i < data.length; i++) {
+                    var info = data[i];
+                    if (data[i].description != null) {
+                        info.ps = data[i].description.split('\n');
+                    }
+                    $scope.infos.push(info);
+                }
+            });
+    };
     $scope.getAllInfos();
+
+    $scope.setCurrentInfo = function (info) {
+        $rootScope.currentInfo = info;
+    };
+
+    $scope.editInfo = function (info) {
+        $scope.setCurrentInfo(info);
+        $location.url('/info/edit');
+    };
+
+    $scope.viewInfo = function (info) {
+        $scope.setCurrentInfo(info);
+        $location.url('/info/view');
+    };
+
+    $scope.deleteInfo = function (info) {
+        $http.post(URL + 'info/delete', info)
+            .success(function (data, status, headers, config) {
+                removeByValue($scope.infos, info);
+                $('#myModal').modal('show');
+            });
+    };
 }).controller('ProjectCtrl', function ($scope, $location, $rootScope) {
     if ($rootScope.user == null) {
         $location.path('/logon_main');

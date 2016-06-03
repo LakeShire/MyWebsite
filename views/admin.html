@@ -16,26 +16,26 @@
 <body ng-app="discount">
 <div id="container" ng-controller="AdminCtrl" class="container">
     <div id="header" class="row">
-        <div id="logo" class="col-md-2 col-xs-12 box">
-            <div id="logo_pic"></div>
-        </div>
-        <div id="nav" class="col-md-8 col-xs-12 box">
-            <ul class="nav nav-pills nav-justified" style="height: 25%;">
-                <li ng-class="{ 'active' : isMode('info') }"><a href="#/info">信息</a></li>
-                <li ng-class="{ 'active' : isMode('source') }"><a href="#/source">源</a></li>
-                <li><a href="#/category3">目录3</a></li>
-                <li><a href="#/category4">目录4</a></li>
-                <li><a href="#/category5">目录5</a></li>
-            </ul>
-        </div>
-        <div id="user" class="col-md-2 col-xs-12">
+        <div id="logo" class="col-md-2"></div>
+        <div id="nav" class="col-md-8">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#/">折扣信息管理</a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li ng-class="{ 'active' : isMode('info') }"><a href="#/info">信息</a></li>
+                        <li ng-class="{ 'active' : isMode('source') }"><a href="#/source">源</a></li>
+                        <li><a href="#/user">用户</a></li>
+                    </ul>
+                </div>
+            </nav>
 
         </div>
+        <div id="user" class="col-md-2"></div>
     </div>
-    <div id="main" ng-include="tplRoute.url" class="row">
-    </div>
-    <div id="footer" class="flex-container" class="row">
-        <div class="flex-item">
+    <div class="row">
+        <div id="main" ng-include="tplRoute.url">
         </div>
     </div>
 </div>

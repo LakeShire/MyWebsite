@@ -1,7 +1,16 @@
 <div ng-controller="AllSourceCtrl">
-    <div ng-repeat="source in sources">
-        <h4>{{ source.name }}</h4>
-        <p>{{ source.description }}</p>
-        <img ng-src="{{ source.pic }} " style="width: 128px; height:128px"/>
-    </div>
+    <table class="table table-bordered">
+        <tbody ng-repeat="source in sources">
+            <tr>
+            <td style="display:table-cell; vertical-align:middle">{{ source.name }}</td>
+            <td style="display:table-cell; vertical-align:middle">{{ source.description }}</td>
+            <td style="display:table-cell; vertical-align:middle"><a href="{{source.pic}}">{{ source.pic }}</a></td>
+            <td style="display: flex; justify-content: space-around;">
+                <button class="btn btn-primary btn-sm" ng-click="view(source)">查看</button>
+                <button class="btn btn-primary btn-sm" ng-click="edit(source)">编辑</button>
+                <button class="btn btn-primary btn-sm" ng-click="delete(source)">删除</button>
+            </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

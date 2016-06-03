@@ -1,3 +1,7 @@
+* {
+    font-size:  12px;
+}
+
 html, body {
     width: 100%;
     height:100%;
@@ -120,17 +124,17 @@ html, body {
 }
 
 #header {
-    background-color: #4cae4c;
-    height: 20%;
+    /*background-color: #9acfea;*/
+    height: 48px;
 }
 
 #main {
     /*background-color: #9acfea;*/
-    height: 75%;
+    /*height: 75%;*/
+    margin-top: 32px;
 }
 
 #logo {
-    background-color: #9acfea;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -149,7 +153,6 @@ html, body {
 }
 
 #user {
-    background-color: #9acfea;
     height: 100%;
 }
 

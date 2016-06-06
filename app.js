@@ -23,6 +23,8 @@ var info = require('./routes/info');
 //  信息源
 var source = require('./routes/source');
 
+var image = require('./routes/image');
+
 var ejs = require('ejs');
 
 var app = express();
@@ -58,6 +60,7 @@ app.use('/info', info);
 app.use('/admin', admin);
 app.use('/source.html', source);
 app.use('/source', source);
+app.use('/images', image);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

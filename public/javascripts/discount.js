@@ -11,7 +11,7 @@ function removeByValue(arr, val) {
     }
 }
 
-var URL = 'http://localhost/';
+var URL = 'http://localhost';
 
 angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($cookieStore, $scope, $location, $rootScope, $http) {
 
@@ -85,7 +85,7 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
     $scope.info = null;
 
     $scope.add = function (info) {
-        $http.post(URL + 'info/add', info)
+        $http.post(URL + '/info/add', info)
             .success(function (data, status, headers, config) {
                 info._id = data;
                 $('#myModal').modal('show');
@@ -99,7 +99,7 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
     $scope.infos = new Array();
     
     $scope.getAllInfos = function() {
-        $http.get(URL + 'info/all')
+        $http.get(URL + '/info/all')
             .success(function (data, status, headers, config) {
                 for (var i = 0; i < data.length; i++) {
                     info = data[i];
@@ -113,7 +113,7 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
     $scope.getAllInfos();
 
     $scope.getAllSources = function() {
-        $http.get(URL + 'source/all')
+        $http.get(URL + '/source/all')
             .success(function (data, status, headers, config) {
                 $scope.sources = data;
             });
@@ -126,7 +126,7 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
     };
 
     $scope.delete = function (info) {
-        $http.post(URL + 'info/delete', info)
+        $http.post(URL + '/info/delete', info)
             .success(function (data, status, headers, config) {
                 removeByValue($scope.infos, info);
                 $('#myModal').modal('show');
@@ -164,7 +164,7 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
     }
 
     $scope.edit = function (info) {
-        $http.post(URL + 'info/add', info)
+        $http.post(URL + '/info/add', info)
             .success(function (data, status, headers, config) {
                 info._id = data;
                 $('#myModal').modal('show');
@@ -200,7 +200,7 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
     $scope.source = null;
 
     $scope.add = function (source) {
-        $http.post(URL + 'source/add', source)
+        $http.post(URL + '/source/add', source)
             .success(function (data, status, headers, config) {
                 source._id = data;
                 $('#myModal').modal('show');
@@ -214,7 +214,7 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
     $scope.sources = null;
 
     $scope.getAllSources = function() {
-        $http.get(URL + 'source/all')
+        $http.get(URL + '/source/all')
             .success(function (data, status, headers, config) {
                 $scope.sources = data;
             });
@@ -226,7 +226,7 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
     };
 
     $scope.delete = function (source) {
-        $http.post(URL + 'source/delete', source)
+        $http.post(URL + '/source/delete', source)
             .success(function (data, status, headers, config) {
                 removeByValue($scope.sources, source);
                 $('#myModal').modal('show');
@@ -242,11 +242,11 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
         $scope.setCurrentSource(source);
         $location.url('/source/edit');
     }
-}).controller('EditSourceCtrl', function ($scope, $location, $rootScope, $http) {
+}).controller('EditSourceCtrl', function ($scope, $location, $rootScope, $http, fileReader, fileUpload) {
     $scope.source = $rootScope.currentSource;
 
-    $scope.edit = function (info) {
-        $http.post(URL + 'source/add', source)
+    $scope.edit = function (source) {
+        $http.post(URL + '/source/add', source)
             .success(function (data, status, headers, config) {
                 source._id = data;
                 $('#myModal').modal('show');
@@ -255,6 +255,28 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
 
     $scope.cancel = function () {
         $location.url('/source');
+    };
+
+    $scope.getFile = function () {
+        fileReader.readAsDataUrl($scope.file, $scope)
+            .then(function(result) {
+                $scope.imageSrc = result;
+            });
+    };
+
+    $scope.upload = function () {
+        var file = $scope.picFile;
+        var uploadUrl = URL + '/source/upload';
+        var rename = $scope.source._id + '.jpg';
+        fileUpload.uploadFileToUrl(file, rename, uploadUrl, {
+            success : function (data) {
+                console.log(data);
+                $scope.source.pic = URL + data.fileUrl;
+            },
+            error : function () {
+
+            }
+        });
     };
 }).controller('ViewSourceCtrl', function ($scope, $location, $rootScope, $http) {
     $scope.source = $rootScope.currentSource;
@@ -269,7 +291,7 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
     };
 
     $scope.getAllInfos = function() {
-        $http.get(URL + 'info/infos?source=' + $scope.source.name)
+        $http.get(URL + '/info/infos?source=' + $scope.source.name)
             .success(function (data, status, headers, config) {
                 for (var i = 0; i < data.length; i++) {
                     var info = data[i];
@@ -297,7 +319,7 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
     };
 
     $scope.deleteInfo = function (info) {
-        $http.post(URL + 'info/delete', info)
+        $http.post(URL + '/info/delete', info)
             .success(function (data, status, headers, config) {
                 removeByValue($scope.infos, info);
                 $('#myModal').modal('show');
@@ -342,7 +364,7 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
         $scope.shouldShowRName = false;
         $scope.shouldShowREmail = false;
         $scope.shouldShowRPassword = false;
-        $http.post(URL + 'users/add', register_user)
+        $http.post(URL + '/users/add', register_user)
             .success(function (data, status, headers, config) {
                 if (data == 'Error') {
                     $scope.registerUserExist = true;
@@ -354,7 +376,7 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
 
     $scope.userNotExist = false;
     $scope.logon = function (__user) {
-        $http.post(URL + 'users/logon', __user)
+        $http.post(URL + '/users/logon', __user)
             .success(function (data, status, headers, config) {
                 if (data == 'User not exist') {
                     $scope.userNotExist = true;
@@ -434,4 +456,68 @@ angular.module('discount', ['ngCookies']).controller('AdminCtrl', function ($coo
         }
         return input;
     }
-});
+}).directive('fileModel', ['$parse', function ($parse) {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs, ngModel) {
+            var model = $parse(attrs.fileModel);
+            var modelSetter = model.assign;
+            element.bind('change', function(event){
+                scope.$apply(function(){
+                    modelSetter(scope, element[0].files[0]);
+                });
+                //附件预览
+                scope.file = (event.srcElement || event.target).files[0];
+                scope.getFile();
+            });
+        }
+    };
+}]).factory('fileReader', ["$q", "$log", function($q, $log){
+    var onLoad = function(reader, deferred, scope) {
+        return function () {
+            scope.$apply(function () {
+                deferred.resolve(reader.result);
+            });
+        };
+    };
+
+    var onError = function (reader, deferred, scope) {
+        return function () {
+            scope.$apply(function () {
+                deferred.reject(reader.result);
+            });
+        };
+    };
+
+    var getReader = function(deferred, scope) {
+        var reader = new FileReader();
+        reader.onload = onLoad(reader, deferred, scope);
+        reader.onerror = onError(reader, deferred, scope);
+        return reader;
+    };
+
+    var readAsDataURL = function (file, scope) {
+        var deferred = $q.defer();
+        var reader = getReader(deferred, scope);
+        reader.readAsDataURL(file);
+        return deferred.promise;
+    };
+
+    return {
+        readAsDataUrl: readAsDataURL
+    };
+}]).service('fileUpload', ['$http', function ($http) {
+    this.uploadFileToUrl = function(file, rename, uploadUrl, uploadCb){
+        var fd = new FormData();
+        fd.append('file', file);
+        fd.append('rename', rename);
+        $http.post(uploadUrl, fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined}
+        }).success( function(data){
+            uploadCb.success(data);
+        }).error( function(data){
+            uploadCb.error();
+        });
+    }
+}]);

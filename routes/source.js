@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var mongodb = require('mongodb');
+var formidable = require('formidable');
+var fs = require('fs');
+var path = require('path');
 
 var server = new mongodb.Server('localhost', 27017, {auto_reconnect:true});
 var db = new mongodb.Db('discount', server, {safe:true});
@@ -78,4 +81,61 @@ router.get('/all', function(req, res, next) {
   });
 });
 
+router.post('/upload', function (req, res, next) {
+    var form = new formidable.IncomingForm();
+
+    // form.uploadDir = "C:\\Users\\nali\\WebstormProjects\\angularjs\\tmp";
+    form.uploadDir = "./tmp";
+    form.maxFieldsSize = 1 * 1024 * 1024;
+    form.keepExtensions = true;
+    form.parse(req, function (err, fields, file) {
+        var rename = fields['rename']
+        var filePath = '';
+
+        if(file.tmpFile){
+            filePath = file.tmpFile.path;
+        } else {
+            for(var key in file){
+                if( file[key].path && filePath==='' ){
+                    filePath = file[key].path;
+                    break;
+                }
+            }
+        }
+
+        // var targetDir = "C:\\Users\\nali\\WebstormProjects\\angularjs\\public\\images";
+        var targetDir = "./public/images";
+        if (!fs.existsSync(targetDir)) {
+            fs.mkdir(targetDir);
+        }
+        var fileExt = filePath.substring(filePath.lastIndexOf('.'));
+        if (('.jpg.jpeg.png.gif').indexOf(fileExt.toLowerCase()) === -1) {
+            var err = new Error('此文件类型不允许上传');
+            res.json({ code:-1, message:'此文件类型不允许上传' });
+        } else {
+            var fileName = rename;
+            var targetFile = path.join(targetDir, fileName);
+            fs.rename(filePath, targetFile, function (err) {
+                if (err) {
+                    console.info(err);
+                    res.json({ code:-1, message:'操作失败' });
+                } else {
+                    var fileUrl = '/images/' + fileName;
+                    res.json({ code:0, fileUrl:fileUrl });
+                }
+            });
+
+            // process.nextTick(function(){
+            //     fs.unlink(filePath, function(err) {
+            //         if (err) {
+            //             console.info("删除上传时生成的临时文件失败");
+            //             console.info(err);
+            //         } else {
+            //             console.info("删除上传时生成的临时文件");
+            //         }
+            //     });
+            // });
+        }
+    });
+});
 module.exports = router;

@@ -5,25 +5,16 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var main = require('./routes/main');
 var users = require('./routes/users');
 var weixin = require('./routes/weixin');
 var logon = require('./routes/logon');
 var register = require('./routes/register');
 var index = require('./routes/index');
 var logon_main = require('./routes/logon_main');
-var project = require('./routes/project');
-var issue = require('./routes/issue');
-var option = require('./routes/option');
-var notes = require('./routes/notes');
-var profile = require('./routes/profile');
-var admin = require('./routes/admin');
 //  折扣信息
 var info = require('./routes/info');
 //  信息源
 var source = require('./routes/source');
-
-var image = require('./routes/image');
 
 var ejs = require('ejs');
 
@@ -44,23 +35,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/index.html', index);
 app.use('/users', users);
 app.use('/weixin', weixin);
 app.use('/logon.html', logon);
 app.use('/register.html', register);
 app.use('/logon_main.html', logon_main);
-app.use('/project.html', project);
-app.use('/issue.html', issue);
-app.use('/option', option);
-app.use('/notes', notes);
-app.use('/main.html', main);
-app.use('/profile', profile);
-app.use('/info.html', info);
 app.use('/info', info);
-app.use('/admin', admin);
-app.use('/source.html', source);
 app.use('/source', source);
-app.use('/images', image);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

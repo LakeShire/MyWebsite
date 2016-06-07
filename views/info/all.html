@@ -1,4 +1,7 @@
-<div ng-controller="AllInfoCtrl">
+<div>
+    <div class="well">
+        <button class="btn btn-primary" ng-click="add()">添加</button>
+    </div>
     <table class="table table-bordered">
         <tbody ng-repeat="info in infos">
             <td style="display:table-cell; vertical-align:middle">{{ info.title }}</td>

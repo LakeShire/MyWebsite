@@ -122,4 +122,21 @@ router.get('/infos', function(req, res, next) {
     });
 });
 
+router.get('/:id', function(req, res, next) {
+    var id = req.params.id;
+    db.createCollection('notes', {safe:true}, function(err, collection){
+        if (err) {
+            res.send('Error');
+        } else {
+            collection.find({'_id' : mongodb.ObjectId(id)}).toArray(function (err, docs) {
+                if (err != null) {
+                    res.send('Error');
+                } else {
+                    res.send(docs);
+                }
+            })
+        }
+    });
+});
+
 module.exports = router;

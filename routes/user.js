@@ -57,6 +57,7 @@ router.post('/update', function(req, res, next) {
     if (err) {
       res.send('Error');
     } else {
+      user._id = mongodb.ObjectId(user._id);
       collection.save(user, function (err, result) {
         if (err) {
           res.send('Error');

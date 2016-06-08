@@ -52,7 +52,7 @@
         </div>
         <div id="user" class="col-md-2" style="display: flex; align-items: center">
             <button class="btn btn-primary" ng-hide="isLoggedOn()" ng-click="logon()">登录</button>
-            <div ng-model="user.name" ng-show="isLoggedOn()">{{ user.name }}</div>
+            <button class="btn btn-default" ng-model="user.name" ng-show="isLoggedOn()" ng-click="profile()">{{ user.name }}</button>
             <button class="btn btn-default" ng-show="isLoggedOn()" ng-click="logout()">登出</button>
         </div>
     </div>

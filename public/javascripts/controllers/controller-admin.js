@@ -3,7 +3,7 @@
  */
 
 (function () {
-    admin.controller('AdminCtrl', ['$cookieStore', '$scope', '$location', '$rootScope', function ($cookieStore, $scope, $location, $rootScope) {
+    admin.controller('AdminCtrl', function ($cookieStore, $scope, $location, $rootScope, tempData) {
         $rootScope.mode = 'info';
 
         $rootScope.user = $cookieStore.get('user');
@@ -55,5 +55,10 @@
                 return false;
             }
         };
-    }]);
+
+        $scope.profile = function () {
+            tempData.setCurrentUser($rootScope.user);
+            $location.url('user/view');
+        };
+    });
 })();

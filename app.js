@@ -13,6 +13,8 @@ var index = require('./routes/index');
 var info = require('./routes/info');
 //  信息源
 var source = require('./routes/source');
+//  收藏
+var collection = require('./routes/collection');
 
 var ejs = require('ejs');
 
@@ -39,6 +41,7 @@ app.use('/weixin', weixin);
 app.use('/logon.html', logon);
 app.use('/info', info);
 app.use('/source', source);
+app.use('/collection', collection);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

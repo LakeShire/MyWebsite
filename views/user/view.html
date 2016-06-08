@@ -19,4 +19,20 @@
             <p>{{ role(user.role) }}</p>
         </div>
     </form>
+    <div class="panel panel-primary" ng-show="hasCollection()">
+        <div class="panel-heading">收藏</div>
+        <div class="panel-body">
+            <table class="table table-bordered">
+                <tbody ng-repeat="info in infos">
+                <td style="display:table-cell; vertical-align:middle">{{ info.title }}</td>
+                <td style="display: flex; justify-content: space-around;">
+                    <!--<button class="btn btn-primary btn-sm" ng-click="viewInfo(info)">查看</button>-->
+                    <!--<button class="btn btn-primary btn-sm" ng-click="editInfo(info)" ng-show="isAdmin()">编辑</button>-->
+                    <button class="btn btn-primary btn-sm" ng-click="deleteCollect(info)" ng-show="isAdmin()">取消收藏</button>
+                </td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 </div>

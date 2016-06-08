@@ -1,11 +1,12 @@
 <div class="well">
-    <form role="form" ng-submit="edit()">
+    <form role="form">
         <div id="legend" class="row">
             <div class="col-md-10">
                 <legend class="">{{ info.title }}</legend>
             </div>
-            <div class="col-md-2" style="display: flex; justify-content: center">
-                <button type="submit" class="btn btn-primary" ng-show="isAdmin()">编辑</button>
+            <div class="col-md-2" style="display: flex; justify-content: space-around">
+                <button class="btn btn-primary" ng-click="edit()" ng-show="isAdmin()">编辑</button>
+                <button class="btn" ng-class="{'btn-primary' : !isCollected(), 'btn-default' : isCollected()}" ng-click="collect()"><span ng-show="isCollected()">取消</span>收藏</button>
             </div>
         </div>
 

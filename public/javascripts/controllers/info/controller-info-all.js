@@ -51,7 +51,7 @@
         };
 
         $scope.isAdmin = function () {
-            return $rootScope.user.role === 'admin';
+            return $rootScope.user != null && $rootScope.user.role === 'admin';
         };
     });
 })();

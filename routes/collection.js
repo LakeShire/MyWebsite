@@ -91,18 +91,19 @@ router.post('/add', function(req, res, next) {
                         user = docs[0];
                         if (user.collections == null) {
                             res.send({'ret' : -1, 'msg' : 'no collections'});
+                        } else {
+                            user.collections.push({
+                                '_id': info._id,
+                                'title': info.title
+                            });
+                            collection.save(user, function (err, data) {
+                                if (err) {
+                                    res.send({'ret': -1});
+                                } else {
+                                    res.send({'ret': 0, 'user': user});
+                                }
+                            })
                         }
-                        user.collections.push({
-                            '_id' : info._id,
-                            'title' : info.title
-                        });
-                        collection.save(user, function (err, data) {
-                            if (err) {
-                                res.send({'ret' : -1});
-                            } else {
-                                res.send({'ret' : 0, 'user' : user});
-                            }
-                        })
                     }
                 } else {
                     res.send('Error');

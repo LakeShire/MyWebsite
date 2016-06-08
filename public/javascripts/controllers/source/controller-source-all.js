@@ -38,6 +38,10 @@
 
         $scope.add = function () {
             $location.url('/source/add');
-        }
+        };
+
+        $scope.isAdmin = function () {
+            return $rootScope.user.role === 'admin';
+        };
     });
 })();

@@ -1,0 +1,19 @@
+<div>
+    <!--<div class="well">-->
+        <!--<button class="btn btn-primary" ng-click="add()">添加</button>-->
+    <!--</div>-->
+    <table class="table table-bordered">
+        <tbody ng-repeat="user in users">
+            <tr>
+            <td style="display:table-cell; vertical-align:middle">{{ user.name }}</td>
+            <td style="display:table-cell; vertical-align:middle">{{ user.email }}</td>
+            <td style="display:table-cell; vertical-align:middle">{{ role(user.role) }}</td>
+            <td style="display: flex; justify-content: space-around;">
+                <button class="btn btn-primary btn-sm" ng-click="view(user)">查看</button>
+                <button class="btn btn-primary btn-sm" ng-click="edit(user)">编辑</button>
+                <button class="btn btn-primary btn-sm" ng-click="delete(user)">删除</button>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

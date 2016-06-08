@@ -5,12 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var users = require('./routes/users');
+var user = require('./routes/user');
 var weixin = require('./routes/weixin');
 var logon = require('./routes/logon');
-var register = require('./routes/register');
 var index = require('./routes/index');
-var logon_main = require('./routes/logon_main');
 //  折扣信息
 var info = require('./routes/info');
 //  信息源
@@ -36,11 +34,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/index.html', index);
-app.use('/users', users);
+app.use('/user', user);
 app.use('/weixin', weixin);
 app.use('/logon.html', logon);
-app.use('/register.html', register);
-app.use('/logon_main.html', logon_main);
 app.use('/info', info);
 app.use('/source', source);
 
@@ -77,3 +73,4 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+

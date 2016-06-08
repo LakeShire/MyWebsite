@@ -7,7 +7,8 @@
 
         this.currentInfo = null;
         this.currentSource = null;
-
+        this.currentUser = null;
+        
         this.setCurrentInfo = function (info) {
             this.currentInfo = info;
         };
@@ -23,5 +24,13 @@
         this.getCurrentSource = function () {
             return this.currentSource;
         };
+
+        this.setCurrentUser = function (user) {
+            this.currentUser = user;
+        };
+
+        this.getCurrentUser = function () {
+            return this.currentUser;
+        }
     }]);
 })();

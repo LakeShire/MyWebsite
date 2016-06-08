@@ -17,5 +17,9 @@
         if ($scope.info != null && $scope.info.tags != null) {
             $scope.tags = $scope.info.tags.split(",");
         }
+
+        $scope.isAdmin = function () {
+            return $rootScope.user.role === 'admin';
+        };
     })
 })();

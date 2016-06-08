@@ -11,16 +11,18 @@
     <script src="http://apps.bdimg.com/libs/angular.js/1.5.0-beta.0/angular-cookies.min.js"></script>
     <script src="javascripts/app.js"></script>
     <script src="javascripts/controllers/controller-admin.js"></script>
-    <script src="javascripts/controllers/info/controller-info.js"></script>
+    <script src="javascripts/controllers/controller-logon.js"></script>
     <script src="javascripts/controllers/info/controller-info-add.js"></script>
     <script src="javascripts/controllers/info/controller-info-all.js"></script>
     <script src="javascripts/controllers/info/controller-info-edit.js"></script>
     <script src="javascripts/controllers/info/controller-info-view.js"></script>
-    <script src="javascripts/controllers/source/controller-source.js"></script>
     <script src="javascripts/controllers/source/controller-source-add.js"></script>
     <script src="javascripts/controllers/source/controller-source-all.js"></script>
     <script src="javascripts/controllers/source/controller-source-edit.js"></script>
     <script src="javascripts/controllers/source/controller-source-view.js"></script>
+    <script src="javascripts/controllers/user/controller-user-all.js"></script>
+    <script src="javascripts/controllers/user/controller-user-edit.js"></script>
+    <script src="javascripts/controllers/user/controller-user-view.js"></script>
     <script src="javascripts/directives/file-reader.js"></script>
     <script src="javascripts/factories/file-reader.js"></script>
     <script src="javascripts/filters/trim.js"></script>
@@ -41,20 +43,21 @@
                 </div>
                 <div>
                     <ul class="nav navbar-nav">
-                        <li ng-class="{ 'active' : isMode('info') }"><a href="#/info" ng-click="setMode('info')">信息</a></li>
+                        <li ng-class="{ 'active' : isMode('info') || isMode('logon') }"><a href="#/info" ng-click="setMode('info')">信息</a></li>
                         <li ng-class="{ 'active' : isMode('source') }"><a href="#/source" ng-click="setMode('source')">源</a></li>
-                        <li><a href="#/user">用户</a></li>
+                        <li ng-class="{ 'active' : isMode('user') }"><a href="#/user" ng-click="setMode('user')">用户</a></li>
                     </ul>
                 </div>
             </nav>
-
         </div>
-        <div id="user" class="col-md-2"></div>
+        <div id="user" class="col-md-2" style="display: flex; align-items: center">
+            <button class="btn btn-primary" ng-hide="isLoggedOn()" ng-click="logon()">登录</button>
+            <div ng-model="user.name" ng-show="isLoggedOn()">{{ user.name }}</div>
+            <button class="btn btn-default" ng-show="isLoggedOn()" ng-click="logout()">登出</button>
+        </div>
     </div>
     <div class="row">
-        <!--<div id="main" ng-include="tplRoute.url">-->
-        <!--</div>-->
-        <div id="main" ng-view></div>
+        <div id="main" ng-view ng-show="shouldShow()"></div>
     </div>
 </div>
 </body>

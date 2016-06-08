@@ -27,7 +27,10 @@ function removeByValue(arr, val) {
     //  通用应用
     util = angular.module('util', []);
 
-    var app = angular.module('app', ['admin', 'info', 'source', 'util', 'ngRoute']);
+    //  登录注册
+    logon = angular.module('logon', []);
+
+    var app = angular.module('app', ['admin', 'info', 'source', 'util', 'ngRoute', 'logon']);
     
     app.config(function ($routeProvider) {
         $routeProvider.when('/', {
@@ -63,6 +66,18 @@ function removeByValue(arr, val) {
         }).when('/source/edit', {
             templateUrl : 'source/edit.html',
             controller : 'EditSourceCtrl'
+        }).when('/logon', {
+            templateUrl : 'logon.html',
+            controller : 'LogonCtrl'
+        }).when('/user', {
+            templateUrl : 'user/all.html',
+            controller : 'AllUserCtrl'
+        }).when('/user/view', {
+            templateUrl : 'user/view.html',
+            controller : 'ViewUserCtrl'
+        }).when('/user/edit', {
+            templateUrl : 'user/edit.html',
+            controller : 'EditUserCtrl'
         }).otherwise({
             redirectTo : 'info/all.html'
         });

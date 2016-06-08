@@ -3,8 +3,8 @@
  */
 
 (function() {
-    source.controller('EditSourceCtrl', function ($scope, $location, $rootScope, $http, fileReader, fileUpload) {
-        $scope.source = $rootScope.currentSource;
+    source.controller('EditSourceCtrl', function ($scope, $location, $rootScope, $http, fileReader, fileUpload, tempData) {
+        $scope.source = tempData.getCurrentSource();
 
         $scope.edit = function (source) {
             $http.post(URL + '/source/add', source)
@@ -38,6 +38,10 @@
 
                 }
             });
+        };
+
+        $scope.isAdmin = function () {
+            return $rootScope.user.role === 'admin';
         };
     });
 })();

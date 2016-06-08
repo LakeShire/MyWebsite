@@ -2,11 +2,14 @@
     <div class="logon-box">
         <div class="panel panel-default">
             <ul class="nav nav-pills nav-justified" >
-                <li ng-class="{'active' : isLogonMode()}"><a href="#/logon_main/logon">登录</a></li>
-                <li ng-class="{'active' : !isLogonMode()}"><a href="#/logon_main/register">注册</a></li>
+                <li ng-class="{'active' : isMode('logon')}"><a ng-click="setMode('logon')">登录</a></li>
+                <li ng-class="{'active' : isMode('register')}"><a ng-click="setMode('register')">注册</a></li>
             </ul>
             <div class="panel-body">
-                <div ng-include="selectedRoute.tplUrl"></div>
+                <div ng-show="isMode('logon')" ng-include="'tpls/logon.html'">
+                </div>
+                <div ng-show="isMode('register')" ng-include="'tpls/register.html'">
+                </div>
             </div>
         </div>
     </div>

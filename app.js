@@ -15,6 +15,7 @@ var info = require('./routes/info');
 var source = require('./routes/source');
 //  收藏
 var collection = require('./routes/collection');
+var admin = require('./routes/admin');
 
 var ejs = require('ejs');
 
@@ -35,7 +36,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/index.html', index);
+app.use('/admin.html', admin);
 app.use('/user', user);
 app.use('/weixin', weixin);
 app.use('/logon.html', logon);

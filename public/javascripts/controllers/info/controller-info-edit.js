@@ -3,7 +3,7 @@
  */
 
 (function() {
-    info.controller('EditInfoCtrl', function ($scope, $location, $rootScope, $http, tempData) {
+    info.controller('EditInfoCtrl', function ($scope, $location, $rootScope, $http, tempData, fileUpload, fileReader) {
         $scope.info = tempData.getCurrentInfo();
 
         if ($scope.info.source != null && $scope.info.source.name != null) {
@@ -20,6 +20,28 @@
 
         $scope.cancel = function () {
             $location.url('/');
+        };
+
+        $scope.getFile = function () {
+            fileReader.readAsDataUrl($scope.file, $scope)
+                .then(function(result) {
+                    $scope.imageSrc = result;
+                });
+        };
+
+        $scope.upload = function () {
+            var file = $scope.picFile;
+            var uploadUrl = URL + '/source/upload';
+            var rename = $scope.info._id + '.jpg';
+            fileUpload.uploadFileToUrl(file, rename, uploadUrl, {
+                success : function (data) {
+                    console.log(data);
+                    $scope.info.cover = URL + data.fileUrl;
+                },
+                error : function () {
+
+                }
+            });
         };
     });
 })();

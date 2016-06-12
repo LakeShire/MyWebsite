@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="height:100%">
 <head>
     <meta charset="UTF-8">
-    <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
     <title></title>
     <script src="http://apps.bdimg.com/libs/angular.js/1.5.0-beta.0/angular.min.js"></script>
     <script src="http://apps.bdimg.com/libs/angular.js/1.5.0-beta.0/angular-route.min.js"></script>
@@ -13,7 +12,6 @@
     <script src="javascripts/app.js"></script>
     <script src="javascripts/controllers/controller-admin.js"></script>
     <script src="javascripts/controllers/controller-logon.js"></script>
-    <script src="javascripts/controllers/controller-index.js"></script>
     <script src="javascripts/controllers/info/controller-info-add.js"></script>
     <script src="javascripts/controllers/info/controller-info-all.js"></script>
     <script src="javascripts/controllers/info/controller-info-edit.js"></script>
@@ -35,18 +33,32 @@
     <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body ng-app="app">
-    <div class="container" ng-controller="IndexCtrl">
-        <div ng-repeat="info in infos">
-            <div class="row" style="height: 128px; border-bottom: solid #c0c0c0 1px;">
-                <div class="col-xs-5" style="display: flex; justify-content: center; justify-items: center">
-                    <img ng-src="{{ info.cover }}" style="height:100px; width:132px">
+<div id="container" ng-controller="AdminCtrl" class="container">
+    <div id="header" class="row">
+        <div id="logo" class="col-md-2"></div>
+        <div id="nav" class="col-md-8">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#/">折扣信息管理</a>
                 </div>
-                <div class="col-xs-7">
-                    <div style="font-size: 16px;"><strong>{{ info.title }}</strong></div>
-                    <div style="margin-top: 8px; font-size: 12px">{{ info.source.name }}</div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li ng-class="{ 'active' : isMode('info') || isMode('logon') }"><a href="#/info" ng-click="setMode('info')">信息</a></li>
+                        <li ng-class="{ 'active' : isMode('source') }"><a href="#/source" ng-click="setMode('source')">源</a></li>
+                        <li ng-class="{ 'active' : isMode('user') }"><a href="#/user" ng-click="setMode('user')">用户</a></li>
+                    </ul>
                 </div>
-            </div>
+            </nav>
+        </div>
+        <div id="user" class="col-md-2" style="display: flex; align-items: center">
+            <button class="btn btn-primary" ng-hide="isLoggedOn()" ng-click="logon()">登录</button>
+            <button class="btn btn-default" ng-model="user.name" ng-show="isLoggedOn()" ng-click="profile()">{{ user.name }}</button>
+            <button class="btn btn-default" ng-show="isLoggedOn()" ng-click="logout()">登出</button>
         </div>
     </div>
+    <div class="row">
+        <div id="main" ng-view ng-show="shouldShow()"></div>
+    </div>
+</div>
 </body>
 </html>

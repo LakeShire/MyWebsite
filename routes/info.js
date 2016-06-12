@@ -95,26 +95,80 @@ router.get('/all', function(req, res, next) {
   });
 });
 
+var PAGE_SIZE = 5;
+
 router.get('/infos', function(req, res, next) {
     var source = req.param('source');
+    var pageId = req.param('pageId');
+    pageId = pageId == null ? 0 : pageId;
     db.createCollection('notes', {safe:true}, function(err, collection){
         if (err) {
-            res.send('Error');
+            var result = {
+                'ret' : -1,
+                'msg' : 'Error'
+            };
+            res.send(result);
         } else {
             if (source != null) {
                 collection.find({'source.name' : source}).toArray(function (err, docs) {
                     if (err != null) {
-                        res.send('Error');
+                        var result = {
+                            'ret' : -1,
+                            'msg' : 'Error'
+                        };
+                        res.send(result);
                     } else {
-                        res.send(docs);
+                        var total = docs.length;
+                        var totalPage = Math.round(total / PAGE_SIZE) + 1;
+                        collection.find({ 'source.name' : source }).limit(PAGE_SIZE).skip(pageId * PAGE_SIZE).toArray(function(err, docs) {
+                            if (err != null) {
+                                var result = {
+                                    'ret': -1,
+                                    'msg': 'Error'
+                                };
+                                res.send(result);
+                            } else {
+                                var result = {
+                                    'ret': 0,
+                                    'total': total,
+                                    'totalPage': totalPage,
+                                    'pageId': pageId,
+                                    'infos': docs
+                                };
+                                res.send(result);
+                            }
+                        });
                     }
                 })
             } else {
                 collection.find().toArray(function (err, docs) {
                     if (err != null) {
-                        res.send('Error');
+                        var result = {
+                            'ret' : -1,
+                            'msg' : 'find infos error'
+                        };
+                        res.send(result);
                     } else {
-                        res.send(docs);
+                        var total = docs.length;
+                        var totalPage = Math.round(total / PAGE_SIZE) + 1;
+                        collection.find().limit(PAGE_SIZE).skip(pageId * PAGE_SIZE).toArray(function(err, docs) {
+                           if (err != null) {
+                               var result = {
+                                   'ret' : -1,
+                                   'msg' : 'Error'
+                               };
+                               res.send(result);
+                           } else {
+                               var result = {
+                                   'ret' : 0,
+                                   'total' : total,
+                                   'totalPage' : totalPage,
+                                   'pageId' : pageId,
+                                   'infos' : docs
+                               };
+                               res.send(result);
+                           }
+                        });
                     }
                 })
             }

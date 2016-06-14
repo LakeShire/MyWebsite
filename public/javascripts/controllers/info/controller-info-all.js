@@ -13,7 +13,7 @@
         }
         
         $scope.getInfos = function(page) {
-            $http.get(URL + '/info/infos?pageId=' + page + '&pageSize=20')
+            $http.get(URL + '/info/infos?pageId=' + page + '&pageSize=10')
                 .success(function (data, status, headers, config) {
                     var ret = data['ret'];
                     if (ret == 0) {
@@ -101,6 +101,34 @@
 
         $scope.isSelect = function (page) {
             return $scope.currentPage === page;
+        };
+
+        $scope.nextPage = function () {
+            if ($scope.busy) {
+                return;
+            }
+            $scope.busy = true;
+
+            $http.get(URL + '/info/infos?pageId=' + $scope.currentPage + '&pageSize=10')
+                .success(function (data, status, headers, config) {
+                    var ret = data['ret'];
+                    if (ret == 0) {
+                        var infos = data['infos'];
+                        for (var i = 0; i < infos.length; i++) {
+                            info = infos[i];
+                            if (infos[i].description != null) {
+                                info.ps = infos[i].description.split('\n');
+                            }
+                            $scope.infos.push(info);
+                        }
+                    }
+                    $scope.busy = false;
+                    $scope.currentPage++;
+                });
+        };
+        
+        $scope.canLoadMore = function () {
+            return !$scope.busy && ($scope.currentPage < $scope.totalPage);
         }
     });
 })();

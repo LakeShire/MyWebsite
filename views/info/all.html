@@ -14,16 +14,30 @@
         <!--</tbody>-->
     <!--</table>-->
 <!--</div>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- start: Meta -->
+    <meta charset="utf-8">
+
+</head>
+<body>
 <div class="container">
-    <div ng-repeat="info in infos">
-        <div class="row" style="height: 128px; border-bottom: solid #c0c0c0 1px;" ng-click="view(info)">
-            <div class="col-xs-5 col-lg-2" style="display: flex; align-items: center; height: 100%">
-                <img ng-src="{{ info.cover }}" style="height:100px; width:132px">
-            </div>
-            <div class="col-xs-7 col-lg-10" style="height: 100%; display: flex; justify-content: center; flex-direction: column">
-                <div style="font-size: 16px;"><strong>{{ info.title }}</strong></div>
-                <div style="margin-top: 8px; font-size: 12px">{{ info.source.name }}</div>
+    <div infinite-scroll='nextPage()' infinite-scroll-disabled='!canLoadMore()' infinite-scroll-distance='1'>
+        <div ng-repeat="info in infos">
+            <div class="row" style="height: 128px; border-bottom: solid #c0c0c0 1px;" ng-click="view(info)">
+                <div class="col-xs-5 col-lg-2" style="display: flex; align-items: center; height: 100%">
+                    <img ng-src="{{ info.cover }}" style="height:100px; width:132px">
+                </div>
+                <div class="col-xs-7 col-lg-10" style="height: 100%; display: flex; justify-content: center; flex-direction: column">
+                    <div style="font-size: 16px;"><strong>{{ info.title }}</strong></div>
+                    <div style="margin-top: 8px; font-size: 12px">{{ info.source.name }}</div>
+                </div>
             </div>
         </div>
-    </div>
+        <!--<div ng-show='busy'>加载页面中...</div>-->
+     </div>
 </div>
+</body>
+</html>

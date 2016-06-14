@@ -16,7 +16,7 @@ function removeByValue(arr, val) {
     URL = 'http://localhost';
 
     //  信息模块
-    info = angular.module('info', []);
+    info = angular.module('info', ['infinite-scroll']);
 
     //  信息源模块
     source = angular.module('source', []);

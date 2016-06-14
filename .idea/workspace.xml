@@ -2,208 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a4a55b5-d327-4243-b6bf-83ef72567498" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/fontawesome-webfont-0.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/fontawesome-webfont-62877.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/fontawesome-webfont-62877.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/fontawesome-webfont-62877.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/glyphicons-regular-0.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/glyphicons-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/glyphicons-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/glyphicons-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/glyphiconshalflings-regular-0.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/glyphiconshalflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/glyphiconshalflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/glyphiconshalflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/arrows-active.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/arrows-normal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/avatar.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/bg-input-focus.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/bg-input.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/bg-login.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/browser-chrome-big.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/browser-firefox-big.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/browser-ie.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/browser-opera.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/browser-safari.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/buttons.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/chat-left-metro.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/chat-left-metro@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/chat-left.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/chat-left@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/chat-right-metro.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/chat-right-metro@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/chat-right.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/chat-right@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/chosen-sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/close-button-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/close-button.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/crop.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/dialogs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/gallery/photo1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/gallery/photo10.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/gallery/photo11.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/gallery/photo12.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/gallery/photo13.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/gallery/photo2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/gallery/photo3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/gallery/photo4.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/gallery/photo5.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/gallery/photo6.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/gallery/photo7.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/gallery/photo8.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/gallery/photo9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/glyphicons-halflings-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/glyphicons-halflings.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/glyphicons-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/glyphicons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/glyphicons_halflings-white.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/glyphicons_halflings.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/icons-big.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/icons-small.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/iphone-style-checkboxes/off-63584.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/iphone-style-checkboxes/on-63584.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/iphone-style-checkboxes/slider_center-63584.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/iphone-style-checkboxes/slider_left-63584.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/iphone-style-checkboxes/slider_right-63584.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/progress.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/quicklook-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/quicklook-icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/quote.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/resize.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/slider_r8.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/spinner-mini.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/sprite.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/timeline-bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/timeline-left-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/timeline-left-arrow@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/timeline-right-arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/timeline-right-arrow@2x.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/toolbar.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/toolbar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/ui-bg_flat_0_aaaaaa_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/ui-bg_flat_75_ffffff_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/ui-bg_glass_55_fbf9ee_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/ui-bg_glass_65_ffffff_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/ui-bg_glass_75_dadada_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/ui-bg_glass_75_e6e6e6_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/ui-bg_glass_95_fef1ec_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/ui-bg_highlight-soft_75_cccccc_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/ui-icons_222222_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/ui-icons_2e83ff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/ui-icons_454545_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/ui-icons_888888_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/ui-icons_cd0a0a_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/uploadify-cancel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/glyphicons-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/glyphiconshalflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/glyphicons-white.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/glyphicons.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/glyphicons_halflings-white.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/glyphicons_halflings.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/counter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/custom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/excanvas.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/fullcalendar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery-1.9.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery-migrate-1.0.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery-ui-1.10.0.custom.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.chosen.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.cleditor.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.cookie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.dataTables.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.elfinder.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.flot.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.flot.pie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.flot.resize.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.flot.stack.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.gritter.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.imagesloaded.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.iphone.toggle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.knob.modified.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.masonry.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.noty.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.raty.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.sparkline.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.ui.touch-punch.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.uniform.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/jquery.uploadify-3.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/modernizr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/libs/retina.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/webapp.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/bootstrap-responsive.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/bootstrap-responsive.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/chosen.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/elfinder.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/elfinder.theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/font-awesome-ie7.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/fullcalendar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/glyphicons.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/halflings.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/ie.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/ie9.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/jquery-ui-1.8.21.custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/jquery.cleditor.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/jquery.gritter.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/jquery.iphone.toggle.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/jquery.noty.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/mystyle.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/noty_theme_default.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/style-forms.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/style-responsive.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/uniform.default.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/uploadify.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/info/all_admin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/info/view_admin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/source/all_admin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/source/view_admin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/user/view_admin.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/public/font/glyphicons-halflings-regular.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/public/font/glyphicons-halflings-regular.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/public/font/glyphicons-halflings-regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/public/font/glyphicons-halflings-regular.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/public/font/glyphicons-halflings-regular.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/app.js" afterPath="$PROJECT_DIR$/public/javascripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/controller-admin.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/controller-admin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/controller-index.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/controller-index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/controller-logon.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/controller-logon.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/info/controller-info-add.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/info/controller-info-add.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/info/controller-info-all.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/info/controller-info-all.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/info/controller-info-edit.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/info/controller-info-edit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/info/controller-info-view.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/info/controller-info-view.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/source/controller-source-all.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/source/controller-source-all.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/source/controller-source-edit.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/source/controller-source-edit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/user/controller-user-all.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/user/controller-user-all.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/user/controller-user-edit.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/user/controller-user-edit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/user/controller-user-view.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/user/controller-user-view.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/bootstrap.css" afterPath="$PROJECT_DIR$/public/stylesheets/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/bootstrap.min.css" afterPath="$PROJECT_DIR$/public/stylesheets/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tpls/logon.html" afterPath="$PROJECT_DIR$/public/tpls/logon.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/tpls/register.html" afterPath="$PROJECT_DIR$/public/tpls/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/collection.js" afterPath="$PROJECT_DIR$/routes/collection.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/controllers/source/controller-source-view.js" afterPath="$PROJECT_DIR$/public/javascripts/controllers/source/controller-source-view.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/info.js" afterPath="$PROJECT_DIR$/routes/info.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/source.js" afterPath="$PROJECT_DIR$/routes/source.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/user.js" afterPath="$PROJECT_DIR$/routes/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin.html" afterPath="$PROJECT_DIR$/views/admin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.html" afterPath="$PROJECT_DIR$/views/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/info/add.html" afterPath="$PROJECT_DIR$/views/info/add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/info/all.html" afterPath="$PROJECT_DIR$/views/info/all.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/info/edit.html" afterPath="$PROJECT_DIR$/views/info/edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/info/view.html" afterPath="$PROJECT_DIR$/views/info/view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/logon.html" afterPath="$PROJECT_DIR$/views/logon.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/source/add.html" afterPath="$PROJECT_DIR$/views/source/add.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/source/all.html" afterPath="$PROJECT_DIR$/views/source/all.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/source/edit.html" afterPath="$PROJECT_DIR$/views/source/edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/source/view.html" afterPath="$PROJECT_DIR$/views/source/view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/user/all.html" afterPath="$PROJECT_DIR$/views/user/all.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/user/edit.html" afterPath="$PROJECT_DIR$/views/user/edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/user/view.html" afterPath="$PROJECT_DIR$/views/user/view.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/source/view_admin.html" afterPath="$PROJECT_DIR$/views/source/view_admin.html" />
     </list>
     <ignored path="MyWebsite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -224,120 +27,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="admin.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/admin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="328" column="53" selection-start-line="328" selection-start-column="53" selection-end-line="328" selection-end-column="53" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#li#4;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1465889704701" expanded="false" signature="20186:20198" placeholder="..." />
-                <marker date="1465889704701" expanded="false" signature="32387:32400" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logon.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/tpls/logon.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="58" column="52" selection-start-line="58" selection-start-column="52" selection-end-line="58" selection-end-column="52" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#fieldset#0;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#fieldset#0;n#form#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#8;n#fieldset#0;n#form#0;n#!!top" expanded="true" />
-                <marker date="1465889842600" expanded="false" signature="429:445" placeholder="..." />
-                <marker date="1465889842600" expanded="false" signature="970:986" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/source/add.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="773">
-              <caret line="49" column="14" selection-start-line="27" selection-start-column="3" selection-end-line="49" selection-end-column="14" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <marker date="1465889694787" expanded="false" signature="1226:1238" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="all_admin.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/source/all_admin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="96" selection-end-column="6" />
-              <folding>
-                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <marker date="1465887254544" expanded="false" signature="564:605" placeholder="..." />
-                <marker date="1465887254544" expanded="false" signature="660:701" placeholder="..." />
-                <marker date="1465887254544" expanded="false" signature="763:804" placeholder="..." />
-                <marker date="1465887254544" expanded="false" signature="887:932" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/source/edit.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="125" selection-end-column="14" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#1;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#div#1;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#textarea#0;n#div#0;n#div#2;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <marker date="1465889694942" expanded="false" signature="265:309" placeholder="..." />
-                <marker date="1465889694942" expanded="false" signature="930:944" placeholder="..." />
-                <marker date="1465889694942" expanded="false" signature="1347:1419" placeholder="..." />
-                <marker date="1465889694942" expanded="false" signature="1741:1753" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="all.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/user/all.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="61" column="79" selection-start-line="61" selection-start-column="79" selection-end-line="61" selection-end-column="79" />
-              <folding>
-                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <marker date="1465887254582" expanded="false" signature="612:653" placeholder="..." />
-                <marker date="1465887254582" expanded="false" signature="706:747" placeholder="..." />
-                <marker date="1465887254582" expanded="false" signature="801:842" placeholder="..." />
-                <marker date="1465887254582" expanded="false" signature="901:946" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/user/edit.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -355,7 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controller-user-edit.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controller-user-edit.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/user/controller-user-edit.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -365,11 +54,96 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/user/view.html">
+      <file leaf-file-name="info.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/info.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+            <state relative-caret-position="-85">
+              <caret line="168" column="28" selection-start-line="168" selection-start-column="28" selection-end-line="168" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller-info-all.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/info/controller-info-all.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="72" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller-source-view.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/source/controller-source-view.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="106" selection-start-line="20" selection-start-column="106" selection-end-line="20" selection-end-column="106" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/info/edit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="139" column="92" selection-start-line="139" selection-start-column="92" selection-end-line="139" selection-end-column="92" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#5;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#6;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#6;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#div#6;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#6;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#div#0;n#div#7;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <marker date="1465892205993" expanded="false" signature="264:308" placeholder="..." />
+                <marker date="1465892205993" expanded="false" signature="926:940" placeholder="..." />
+                <marker date="1465892205993" expanded="false" signature="2573:2645" placeholder="..." />
+                <marker date="1465892205993" expanded="false" signature="3004:3016" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="all_admin.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/info/all_admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="89" selection-end-column="18" />
+              <folding>
+                <element signature="n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <marker date="1465886326328" expanded="false" signature="296:337" placeholder="..." />
+                <marker date="1465886326328" expanded="false" signature="387:428" placeholder="..." />
+                <marker date="1465886326328" expanded="false" signature="484:529" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/source/view.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view_admin.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/source/view_admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="75" column="63" selection-start-line="71" selection-start-column="16" selection-end-line="109" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -380,11 +154,11 @@
                 <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#3;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#3;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#3;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <marker date="1465887708284" expanded="false" signature="2452:2500" placeholder="..." />
-                <marker date="1465887708284" expanded="false" signature="2586:2634" placeholder="..." />
-                <marker date="1465887708284" expanded="false" signature="2702:2727" placeholder="..." />
-                <marker date="1465887708284" expanded="false" signature="2822:2898" placeholder="..." />
-                <marker date="1465887708284" expanded="false" signature="2940:2956" placeholder="..." />
+                <marker date="1465892746085" expanded="false" signature="302:340" placeholder="..." />
+                <marker date="1465892746085" expanded="false" signature="777:801" placeholder="..." />
+                <marker date="1465892746085" expanded="false" signature="968:1009" placeholder="..." />
+                <marker date="1465892746085" expanded="false" signature="1059:1100" placeholder="..." />
+                <marker date="1465892746085" expanded="false" signature="1156:1201" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -393,8 +167,8 @@
       <file leaf-file-name="view_admin.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/user/view_admin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="433">
+              <caret line="36" column="82" selection-start-line="35" selection-start-column="12" selection-end-line="36" selection-end-column="82" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -427,7 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/javascripts/controllers/source/controller-source.js" />
         <option value="$PROJECT_DIR$/public/javascripts/controllers/login/controller-logon.js" />
         <option value="$PROJECT_DIR$/routes/logon.js" />
         <option value="$PROJECT_DIR$/public/javascripts/controllers/user/controller-user.js" />
@@ -450,10 +223,8 @@
         <option value="$PROJECT_DIR$/public/stylesheets/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/routes/info.js" />
         <option value="$PROJECT_DIR$/public/javascripts/controllers/info/controller-info-edit.js" />
         <option value="$PROJECT_DIR$/public/javascripts/controllers/info/controller-info-add.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/controllers/info/controller-info-all.js" />
         <option value="$PROJECT_DIR$/public/javascripts/controllers/source/controller-source-all.js" />
         <option value="$PROJECT_DIR$/public/tpls/register.html" />
         <option value="$PROJECT_DIR$/public/javascripts/controllers/controller-logon.js" />
@@ -465,12 +236,10 @@
         <option value="$PROJECT_DIR$/public/javascripts/controllers/source/controller-source-edit.js" />
         <option value="$PROJECT_DIR$/views/source/all_admin.html" />
         <option value="$PROJECT_DIR$/views/user/all.html" />
-        <option value="$PROJECT_DIR$/views/source/view_admin.html" />
         <option value="$PROJECT_DIR$/views/user/view.html" />
         <option value="$PROJECT_DIR$/public/javascripts/controllers/user/controller-user-view.js" />
         <option value="$PROJECT_DIR$/views/user/view_admin.html" />
         <option value="$PROJECT_DIR$/public/javascripts/controllers/user/controller-user-all.js" />
-        <option value="$PROJECT_DIR$/views/info/edit.html" />
         <option value="$PROJECT_DIR$/views/info/add.html" />
         <option value="$PROJECT_DIR$/views/source/add.html" />
         <option value="$PROJECT_DIR$/views/source/edit.html" />
@@ -478,6 +247,11 @@
         <option value="$PROJECT_DIR$/views/admin.html" />
         <option value="$PROJECT_DIR$/public/tpls/logon.html" />
         <option value="$PROJECT_DIR$/public/javascripts/controllers/user/controller-user-edit.js" />
+        <option value="$PROJECT_DIR$/routes/info.js" />
+        <option value="$PROJECT_DIR$/views/info/edit.html" />
+        <option value="$PROJECT_DIR$/views/source/view_admin.html" />
+        <option value="$PROJECT_DIR$/public/javascripts/controllers/source/controller-source-view.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/controllers/info/controller-info-all.js" />
       </list>
     </option>
   </component>
@@ -902,12 +676,12 @@
       <workItem from="1465365002279" duration="153000" />
       <workItem from="1465367270569" duration="10159000" />
       <workItem from="1465796256521" duration="17059000" />
-      <workItem from="1465867916047" duration="21054000" />
+      <workItem from="1465867916047" duration="23031000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="242859000" />
+    <option name="totallyTimeSpent" value="244836000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -1003,14 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/info.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/img/glyphicons-halflings.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1073,14 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/info/controller-info-all.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="12" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1169,40 +927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/source/view.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="77" selection-start-line="3" selection-start-column="77" selection-end-line="3" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/source/view_admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="71" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <marker date="1465887463525" expanded="false" signature="302:340" placeholder="..." />
-            <marker date="1465887463525" expanded="false" signature="777:801" placeholder="..." />
-            <marker date="1465887463525" expanded="false" signature="968:1009" placeholder="..." />
-            <marker date="1465887463525" expanded="false" signature="1059:1100" placeholder="..." />
-            <marker date="1465887463525" expanded="false" signature="1156:1201" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/source/controller-source-view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/user/controller-user-view.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -1276,44 +1000,6 @@
             <element signature="n#style#0;n#img#0;n#form#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#form#0;n#div#0;n#!!top" expanded="true" />
             <marker date="1465806113480" expanded="false" signature="1525:1551" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/info/edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="188" column="14" selection-start-line="173" selection-start-column="3" selection-end-line="188" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#6;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#6;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#div#6;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#6;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#7;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <marker date="1465889694749" expanded="false" signature="264:308" placeholder="..." />
-            <marker date="1465889694749" expanded="false" signature="926:940" placeholder="..." />
-            <marker date="1465889694749" expanded="false" signature="2573:2645" placeholder="..." />
-            <marker date="1465889694749" expanded="false" signature="3004:3016" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/info/all_admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="63" column="20" selection-start-line="38" selection-start-column="11" selection-end-line="63" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <marker date="1465886326328" expanded="false" signature="296:337" placeholder="..." />
-            <marker date="1465886326328" expanded="false" signature="387:428" placeholder="..." />
-            <marker date="1465886326328" expanded="false" signature="484:529" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1478,24 +1164,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/user/view_admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/user/edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
@@ -1515,6 +1183,120 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/info.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="168" column="28" selection-start-line="168" selection-start-column="28" selection-end-line="168" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/info/edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="139" column="92" selection-start-line="139" selection-start-column="92" selection-end-line="139" selection-end-column="92" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#5;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#6;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#6;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#div#6;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#6;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#0;n#div#7;n#fieldset#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <marker date="1465892205993" expanded="false" signature="264:308" placeholder="..." />
+            <marker date="1465892205993" expanded="false" signature="926:940" placeholder="..." />
+            <marker date="1465892205993" expanded="false" signature="2573:2645" placeholder="..." />
+            <marker date="1465892205993" expanded="false" signature="3004:3016" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/info/all_admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="12" selection-start-line="38" selection-start-column="12" selection-end-line="89" selection-end-column="18" />
+          <folding>
+            <element signature="n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <marker date="1465886326328" expanded="false" signature="296:337" placeholder="..." />
+            <marker date="1465886326328" expanded="false" signature="387:428" placeholder="..." />
+            <marker date="1465886326328" expanded="false" signature="484:529" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/source/view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/user/view_admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="36" column="82" selection-start-line="35" selection-start-column="12" selection-end-line="36" selection-end-column="82" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#2;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/source/view_admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="75" column="63" selection-start-line="71" selection-start-column="16" selection-end-line="109" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#3;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#3;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#3;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#3;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#3;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <marker date="1465892746085" expanded="false" signature="302:340" placeholder="..." />
+            <marker date="1465892746085" expanded="false" signature="777:801" placeholder="..." />
+            <marker date="1465892746085" expanded="false" signature="968:1009" placeholder="..." />
+            <marker date="1465892746085" expanded="false" signature="1059:1100" placeholder="..." />
+            <marker date="1465892746085" expanded="false" signature="1156:1201" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/source/controller-source-view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="106" selection-start-line="20" selection-start-column="106" selection-end-line="20" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/controllers/info/controller-info-all.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="72" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
           <folding />
         </state>
       </provider>

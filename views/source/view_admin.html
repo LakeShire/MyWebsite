@@ -67,6 +67,48 @@
                     {{ source.description }}
                 </div>
             </div>
+
+            <div ng-show="hasInfos()">
+                <table class="table table-bordered bootstrap-datatable datatable">
+                    <thead>
+                    <tr>
+                        <th style="text-align: center;">标题</th>
+                        <th style="text-align: center;">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody ng-repeat="info in infos">
+                    <tr ng-class="{ 'info' : ($index % 2 == 0)}" style="height: 32px;">
+                        <td style="text-align: center; line-height: 32px;">{{ info.title }}</td>
+                        <td style="text-align: center;">
+                            <a class="btn btn-success" href="" ng-click="view(info)">
+                                <i class="halflings-icon white zoom-in"></i>
+                            </a>
+                            <a class="btn btn-info" href="" ng-click="edit(info)">
+                                <i class="halflings-icon white edit"></i>
+                            </a>
+                            <!--<a class="btn btn-danger" href="" ng-click="delete(info)">-->
+                            <!--<i class="halflings-icon white trash"></i>-->
+                            <!--</a>-->
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="row-fluid">
+                    <div class="span12 center">
+                        <div class="dataTables_paginate paging_bootstrap pagination">
+                            <ul class="pagination" ng-show="totalPage > 1">
+                                <li ng-class="{ true : 'active' }[currentPage == 1]"><a href="javascript:void(0)" ng-click="first()">首页</a></li>
+                                <li ng-class="{ true : 'disabled' }[currentPage == 1]"><a href="javascript:void(0);" ng-click="prev()">上一页</a></li>
+                                <li ng-repeat="page in pages" ng-class="{'active' : isSelect(page)}"><a href="javascript:void(0);" ng-click="loadPage(page)">{{ page }}</a></li>
+                                <li ng-class="{ true : 'disabled'}[currentPage == totalPage]"><a href="javascript:void(0);" ng-click="next()">下一页</a></li>
+                                <li ng-class="{ true : 'active'}[currentPage == totalPage]"><a href="javascript:void(0)" ng-click="last()">末页</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

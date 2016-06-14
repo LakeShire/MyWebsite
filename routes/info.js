@@ -103,12 +103,15 @@ router.get('/all', function(req, res, next) {
   });
 });
 
-var PAGE_SIZE = 5;
+var PAGE_SIZE = 20;
 
 router.get('/infos', function(req, res, next) {
     var source = req.param('source');
     var pageId = req.param('pageId');
+    var pageSize = req.param('pageSize');
     pageId = pageId == null ? 0 : pageId;
+    pageSize = pageSize == null ? PAGE_SIZE : pageSize;
+
     db.createCollection('notes', {safe:true}, function(err, collection){
         if (err) {
             var result = {
@@ -127,8 +130,14 @@ router.get('/infos', function(req, res, next) {
                         res.send(result);
                     } else {
                         var total = docs.length;
-                        var totalPage = Math.floor(total / PAGE_SIZE) + 1;
-                        collection.find({ 'source.name' : source }).limit(PAGE_SIZE).skip(pageId * PAGE_SIZE).toArray(function(err, docs) {
+                        var page = total / pageSize;
+                        var totalPage;
+                        if (page % 1 === 0) {
+                            totalPage = page;
+                        } else {
+                            totalPage = Math.floor(page) + 1;
+                        }
+                        collection.find({ 'source.name' : source }).limit(pageSize * 1).skip(pageId * pageSize).toArray(function(err, docs) {
                             if (err != null) {
                                 var result = {
                                     'ret': -1,
@@ -140,6 +149,7 @@ router.get('/infos', function(req, res, next) {
                                     'ret': 0,
                                     'total': total,
                                     'totalPage': totalPage,
+                                    'pageSize' : pageSize,
                                     'pageId': pageId,
                                     'infos': docs
                                 };
@@ -158,8 +168,14 @@ router.get('/infos', function(req, res, next) {
                         res.send(result);
                     } else {
                         var total = docs.length;
-                        var totalPage = Math.floor(total / PAGE_SIZE) + 1;
-                        collection.find().limit(PAGE_SIZE).skip(pageId * PAGE_SIZE).toArray(function(err, docs) {
+                        var page = total / pageSize;
+                        var totalPage;
+                        if (page % 1 === 0) {
+                            totalPage = page;
+                        } else {
+                            totalPage = Math.floor(page) + 1;
+                        }
+                        collection.find().limit(pageSize * 1).skip(pageId * pageSize).toArray(function(err, docs) {
                            if (err != null) {
                                var result = {
                                    'ret' : -1,
@@ -171,6 +187,7 @@ router.get('/infos', function(req, res, next) {
                                    'ret' : 0,
                                    'total' : total,
                                    'totalPage' : totalPage,
+                                   'pageSize' : pageSize,
                                    'pageId' : pageId,
                                    'infos' : docs
                                };

@@ -13,7 +13,7 @@
         }
         
         $scope.getInfos = function(page) {
-            $http.get(URL + '/info/infos?pageId=' + page)
+            $http.get(URL + '/info/infos?pageId=' + page + '&pageSize=20')
                 .success(function (data, status, headers, config) {
                     var ret = data['ret'];
                     if (ret == 0) {
@@ -98,5 +98,9 @@
             $scope.currentPage = page;
             $scope.getInfos(page - 1);
         };
+
+        $scope.isSelect = function (page) {
+            return $scope.currentPage === page;
+        }
     });
 })();

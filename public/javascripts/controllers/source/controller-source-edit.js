@@ -5,7 +5,8 @@
 (function() {
     source.controller('EditSourceCtrl', function ($scope, $location, $rootScope, $http, fileReader, fileUpload, tempData) {
         $scope.source = tempData.getCurrentSource();
-
+        $scope.imageSrc = $scope.source.pic;
+        
         $scope.edit = function (source) {
             $http.post(URL + '/source/add', source)
                 .success(function (data, status, headers, config) {

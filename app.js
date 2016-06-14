@@ -37,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/admin.html', admin);
+app.use('/index.html', index);
 app.use('/user', user);
 app.use('/weixin', weixin);
 app.use('/logon.html', logon);

@@ -5,6 +5,7 @@
 (function() {
     info.controller('EditInfoCtrl', function ($scope, $location, $rootScope, $http, tempData, fileUpload, fileReader) {
         $scope.info = tempData.getCurrentInfo();
+        $scope.imageSrc = $scope.info.cover;
 
         if ($scope.info.source != null && $scope.info.source.name != null) {
             $scope.info.source = $scope.info.source.name;

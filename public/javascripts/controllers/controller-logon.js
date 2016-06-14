@@ -67,5 +67,18 @@
         $scope.onBlurPassword = function () {
             $scope.shouldShowPassword = true;
         };
+
+        $scope.shouldShowRName = false;
+        $scope.shouldShowREmail = false;
+        $scope.shouldShowRPassword = false;
+        $scope.onBlurRName = function () {
+            $scope.shouldShowRName = true;
+        };
+        $scope.onBlurRPassword = function () {
+            $scope.shouldShowRPassword = true;
+        };
+        $scope.onBlurREmail = function () {
+            $scope.shouldShowREmail = true;
+        };
     });
 })();

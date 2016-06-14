@@ -27,6 +27,14 @@ router.get('/view.html', function(req, res, next) {
     res.render('info/view', { title: 'Express' });
 });
 
+router.get('/all_admin.html', function(req, res, next) {
+    res.render('info/all_admin', { title: 'Express' });
+});
+
+router.get('/view_admin.html', function(req, res, next) {
+    res.render('info/view_admin', { title: 'Express' });
+});
+
 router.get('/edit.html', function(req, res, next) {
     res.render('info/edit', { title: 'Express' });
 });
@@ -119,7 +127,7 @@ router.get('/infos', function(req, res, next) {
                         res.send(result);
                     } else {
                         var total = docs.length;
-                        var totalPage = Math.round(total / PAGE_SIZE) + 1;
+                        var totalPage = Math.floor(total / PAGE_SIZE) + 1;
                         collection.find({ 'source.name' : source }).limit(PAGE_SIZE).skip(pageId * PAGE_SIZE).toArray(function(err, docs) {
                             if (err != null) {
                                 var result = {
@@ -150,7 +158,7 @@ router.get('/infos', function(req, res, next) {
                         res.send(result);
                     } else {
                         var total = docs.length;
-                        var totalPage = Math.round(total / PAGE_SIZE) + 1;
+                        var totalPage = Math.floor(total / PAGE_SIZE) + 1;
                         collection.find().limit(PAGE_SIZE).skip(pageId * PAGE_SIZE).toArray(function(err, docs) {
                            if (err != null) {
                                var result = {

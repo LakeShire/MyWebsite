@@ -25,6 +25,14 @@
             }
         };
 
+        $scope.isRole = function (role) {
+            if ($scope.user.role === role) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+
         $scope.viewInfo = function (info) {
             tempData.setCurrentInfo(info);
             $location.url('/info/view');

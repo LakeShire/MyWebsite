@@ -1,8 +1,9 @@
-<div class="well">
+<div class="container">
     <form role="form" ng-submit="edit()">
         <div id="legend" class="row">
-            <div class="col-md-10">
-                <legend class="">{{ source.name }}</legend>
+            <div class="col-md-10" style="display: flex; flex-direction: row">
+                <img ng-src="{{ source.pic }}" style="width: 32px; height:32px">
+                <legend class="" style="margin-left: 4px">{{ source.name }}</legend>
             </div>
             <div class="col-md-2" style="display: flex; justify-content: center">
                 <button type="submit" class="btn btn-primary" ng-show="isAdmin()">编辑</button>
@@ -10,14 +11,9 @@
         </div>
 
         <div class="form-group">
-            <label>简介</label>
             <p>{{ source.description}}</p>
         </div>
 
-        <div class="form-group">
-            <label>图片</label>
-            <img ng-src="{{ source.pic }}" style="width: 32px; height:32px">
-        </div>
     </form>
     <table class="table table-bordered">
         <tbody ng-repeat="info in infos">

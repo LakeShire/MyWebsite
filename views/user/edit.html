@@ -1,55 +1,133 @@
-<div class="well">
-    <form role="form">
-        <div id="legend" class="row">
-            <div class="col-md-10">
-            <legend class="">编辑信息</legend>
-            </div>
-            <div class="col-md-2" style="display: flex; justify-content: space-around">
-                <button class="btn btn-primary" ng-click="edit(user)">完成</button>
-                <button class="btn btn-default" ng-click="cancel()">取消</button>
-            </div>
-        </div>
+<!--<div class="well">-->
+    <!--<form role="form">-->
+        <!--<div id="legend" class="row">-->
+            <!--<div class="col-md-10">-->
+            <!--<legend class="">编辑信息</legend>-->
+            <!--</div>-->
+            <!--<div class="col-md-2" style="display: flex; justify-content: space-around">-->
+                <!--<button class="btn btn-primary" ng-click="edit(user)">完成</button>-->
+                <!--<button class="btn btn-default" ng-click="cancel()">取消</button>-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <div class="form-group">
-            <label for="name">名称</label>
-            <input type="text" class="form-control" id="name" placeholder="" ng-model="user.name">
-        </div>
+        <!--<div class="form-group">-->
+            <!--<label for="name">名称</label>-->
+            <!--<input type="text" class="form-control" id="name" placeholder="" ng-model="user.name">-->
+        <!--</div>-->
 
-        <div class="form-group">
-            <label for="email">邮箱</label>
-            <input type="text" class="form-control" id="email" placeholder="" ng-model="user.email">
-        </div>
+        <!--<div class="form-group">-->
+            <!--<label for="email">邮箱</label>-->
+            <!--<input type="text" class="form-control" id="email" placeholder="" ng-model="user.email">-->
+        <!--</div>-->
 
-        <div class="form-group">
-            <label for="role">角色</label>
-            <select ng-model="user.role" id="role" class="form-control">
-                <option value="normal">普通</option>
-                <option value="vip">VIP</option>
-                <option value="admin">管理员</option>
-            </select>
-        </div>
-    </form>
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-         aria-labelledby="myModalLabel" aria-hidden="true" style="height: 50%;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h1 class="modal-title" id="myModalLabel">
-                        修改信息成功
-                    </h1>
-                </div>
-                <div class="modal-body">
-                    修改信息成功!
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" ng-click="closeWindow()">
-                        关闭
-                    </button>
-                </div>
-            </div>
-        </div>
+        <!--<div class="form-group">-->
+            <!--<label for="role">角色</label>-->
+            <!--<select ng-model="user.role" id="role" class="form-control">-->
+                <!--<option value="normal">普通</option>-->
+                <!--<option value="vip">VIP</option>-->
+                <!--<option value="admin">管理员</option>-->
+            <!--</select>-->
+        <!--</div>-->
+    <!--</form>-->
+    <!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog"-->
+         <!--aria-labelledby="myModalLabel" aria-hidden="true" style="height: 50%;">-->
+        <!--<div class="modal-dialog">-->
+            <!--<div class="modal-content">-->
+                <!--<div class="modal-header">-->
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">-->
+                        <!--&times;-->
+                    <!--</button>-->
+                    <!--<h1 class="modal-title" id="myModalLabel">-->
+                        <!--修改信息成功-->
+                    <!--</h1>-->
+                <!--</div>-->
+                <!--<div class="modal-body">-->
+                    <!--修改信息成功!-->
+                <!--</div>-->
+                <!--<div class="modal-footer">-->
+                    <!--<button type="button" class="btn btn-primary" ng-click="closeWindow()">-->
+                        <!--关闭-->
+                    <!--</button>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<div class="box span12">
+    <div class="box-header" data-original-title="">
+        <h2><i class="halflings-icon edit"></i><span class="break"></span>编辑用户</h2>
+        <!--<div class="box-icon">-->
+        <!--<a href="#" class="btn-setting"><i class="halflings-icon glyphicon-floppy-saved"></i></a>-->
+        <!--<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>-->
+        <!--<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>-->
+        <!--</div>-->
     </div>
+    <div class="box-content">
+        <form class="form-horizontal">
+            <fieldset>
+                <div class="control-group">
+                    <label class="control-label" for="name">用户名</label>
+                    <div class="controls">
+                        <input id="name" type="text" ng-model="user.name">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">头像</label>
+                    <div class="controls">
+                        <div>
+                            <img ng-src="{{ imageSrc }}" style="width:64px; height:64px; margin-top: 16px; margin-bottom: 16px" />
+                        </div>
+                        <div class="uploader">
+                            <input type="file" file-model="picFile">
+                            <span class="filename" style="-webkit-user-select: none;">{{ picFile.name }}</span>
+                            <span class="action" style="-webkit-user-select: none;">选择文件</span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-small" ng-click="upload()" style="margin-left: 8px">上传图片</button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="email">邮箱</label>
+                    <div class="controls">
+                        <input id="email" type="text" class="form-control" ng-model="user.email"> </input>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="role">角色</label>
+                    <div class="controls">
+                        <select id="role" data-rel="chosen" ng-model="user.role" ng-value="{{ user.role }}">
+                            <option value="normal">普通</option>
+                            <option value="vip">VIP</option>
+                            <option value="admin">管理员</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" ng-click="edit(user)">保存</button>
+                    <button class="btn" ng-click="cancel()">取消</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
+        <!--<div class="modal-dialog">-->
+            <!--<div class="modal-content">-->
+                <!--<div class="modal-header">-->
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+                    <!--<h1 class="modal-title" id="myModalLabel">修改信息成功</h1>-->
+                <!--</div>-->
+                <!--<div class="modal-body" style="height: 80px;">-->
+                    <!--修改信息成功!-->
+                <!--</div>-->
+                <!--<div class="modal-footer">-->
+                    <!--<button type="button" class="btn btn-primary" ng-click="closeWindow()">关闭</button>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 </div>

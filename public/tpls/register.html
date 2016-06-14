@@ -1,37 +1,70 @@
 
-<form name="RegisterForm" ng-submit="register(register_user)">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="form-group">
-                <label>用户名</label>
-                <input type="text" class="form-control" name="name" ng-model="register_user.name" ng-blur="onBlurRName()" placeholder="请输入用户名" required>
-                <div class="alert alert-info" style="margin-top: 10px" ng-show="showError(RegisterForm.name, 'required') && shouldShowRName">请输入用户名</div>
-            </div>
+<!--<form name="RegisterForm" ng-submit="register(register_user)">-->
+    <!--<div class="row">-->
+        <!--<div class="col-xs-12">-->
+            <!--<div class="form-group">-->
+                <!--<label>用户名</label>-->
+                <!--<input type="text" class="form-control" name="name" ng-model="register_user.name" ng-blur="onBlurRName()" placeholder="请输入用户名" required>-->
+                <!--<div class="alert alert-info" style="margin-top: 10px" ng-show="showError(RegisterForm.name, 'required') && shouldShowRName">请输入用户名</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row">-->
+        <!--<div class="col-xs-12">-->
+            <!--<div class="form-group">-->
+                <!--<label>邮箱</label>-->
+                <!--<input type="email" class="form-control" name="email" ng-model="register_user.email" ng-blur="onBlurREmail()" placeholder="请输入电子邮箱" required>-->
+                <!--<div class="alert alert-info" style="margin-top: 10px" ng-show="showError(RegisterForm.email, 'required') && shouldShowREmail">请输入电子邮箱</div>-->
+                <!--<div class="alert alert-info" style="margin-top: 10px" ng-show="showError(RegisterForm.email, 'email')">电子邮箱的格式不正确</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row">-->
+        <!--<div class="col-xs-12">-->
+            <!--<div class="form-group">-->
+                <!--<label>密码</label>-->
+                <!--<input type="password" class="form-control" name="password" ng-model="register_user.password" ng-blur="onBlurRPassword()" placeholder="请输入密码" required>-->
+                <!--<div class="alert alert-info" style="margin-top: 10px" ng-show="showError(RegisterForm.password, 'required') && shouldShowRPassword">请输入密码</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row">-->
+        <!--<div class="col-xs-4 col-xs-offset-4">-->
+            <!--<button type="submit" class="btn btn-primary btn-logon">注册</button>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</form>-->
+<!--<div class="alert alert-info" style="margin-top: 10px" ng-show="registerUserExist">用户名已存在</div>-->
+
+<form class="form-horizontal" name="RegisterForm">
+    <fieldset>
+        <div class="input-prepend" title="Username">
+            <span class="add-on"><i class="halflings-icon user"></i></span>
+            <input class="input-large span10" name="name" id="username" type="text" ng-model="register_user.name" placeholder="请输入用户名" ng-blur="onBlurRName()" required/>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="form-group">
-                <label>邮箱</label>
-                <input type="email" class="form-control" name="email" ng-model="register_user.email" ng-blur="onBlurREmail()" placeholder="请输入电子邮箱" required>
-                <div class="alert alert-info" style="margin-top: 10px" ng-show="showError(RegisterForm.email, 'required') && shouldShowREmail">请输入电子邮箱</div>
-                <div class="alert alert-info" style="margin-top: 10px" ng-show="showError(RegisterForm.email, 'email')">电子邮箱的格式不正确</div>
-            </div>
+        <div class="alert alert-info" style="margin: 16px" ng-show="showError(RegisterForm.name, 'required') && shouldShowRName">请输入用户名</div>
+        <div class="clearfix"></div>
+
+        <div class="input-prepend" title="Email">
+            <span class="add-on"><i class="halflings-icon email"></i></span>
+            <input class="input-large span10" name="email" id="email" type="text" ng-model="register_user.email" placeholder="请输入电子邮箱" ng-blur="onBlurREmail()" required/>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="form-group">
-                <label>密码</label>
-                <input type="password" class="form-control" name="password" ng-model="register_user.password" ng-blur="onBlurRPassword()" placeholder="请输入密码" required>
-                <div class="alert alert-info" style="margin-top: 10px" ng-show="showError(RegisterForm.password, 'required') && shouldShowRPassword">请输入密码</div>
-            </div>
+        <div class="alert alert-info" style="margin: 16px" ng-show="showError(RegisterForm.email, 'required') && shouldShowREmail">请输入电子邮箱</div>
+        <div class="alert alert-info" style="margin: 16px" ng-show="showError(RegisterForm.email, 'email')">电子邮箱的格式不正确</div>
+        <div class="clearfix"></div>
+
+        <div class="input-prepend" title="Password">
+            <span class="add-on"><i class="halflings-icon lock"></i></span>
+            <input class="input-large span10" name="password" id="password" type="password" ng-model="register_user.password" placeholder="请输入密码" ng-blur="onBlurRPassword()" required/>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-4 col-xs-offset-4">
-            <button type="submit" class="btn btn-primary btn-logon">注册</button>
+        <div class="alert alert-info" style="margin: 16px" ng-show="showError(RegisterForm.password, 'required') && shouldShowRPassword">请输入密码</div>
+        <div class="clearfix"></div>
+
+        <!--<label class="remember" for="remember"><input type="checkbox" id="remember" />记住我</label>-->
+
+        <div class="button-login">
+            <button type="submit" class="btn btn-primary" ng-click="register(register_user)">注册</button>
         </div>
-    </div>
+        <div class="alert alert-info" style="margin-top: 16px" ng-show="registerUserExist">用户名已存在</div>
+    </fieldset>
 </form>
-<div class="alert alert-info" style="margin-top: 10px" ng-show="registerUserExist">用户名已存在</div>

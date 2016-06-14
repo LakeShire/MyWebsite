@@ -32,6 +32,7 @@
                         if (ret == 0) {
                             $scope.collected = true;
                             var user = data['user'];
+                            console.log(data['user']);
                             $cookieStore.put('user', user);
                             $rootScope.user = user;
                             $('#myModal').modal('show');
@@ -62,14 +63,16 @@
 
         $scope.initCollected = function () {
             $scope.collected = false;
-            var collections = $rootScope.user.collections;
-            if (collections == null) {
-                $scope.collected = false;
-            } else {
-                for (var i = 0; i < collections.length; i++) {
-                    if ($scope.info._id === collections[i]._id) {
-                        $scope.collected = true;
-                        break;
+            if ($rootScope.user != null) {
+                var collections = $rootScope.user.collections;
+                if (collections == null) {
+                    $scope.collected = false;
+                } else {
+                    for (var i = 0; i < collections.length; i++) {
+                        if ($scope.info._id === collections[i]._id) {
+                            $scope.collected = true;
+                            break;
+                        }
                     }
                 }
             }

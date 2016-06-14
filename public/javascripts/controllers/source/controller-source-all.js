@@ -6,6 +6,10 @@
     source.controller('AllSourceCtrl', function ($scope, $location, $rootScope, $http, tempData) {
         $scope.sources = null;
 
+        if ($rootScope.user == null) {
+            $location.url('logon');
+        }
+        
         $scope.getAllSources = function() {
             $http.get(URL + '/source/all')
                 .success(function (data, status, headers, config) {

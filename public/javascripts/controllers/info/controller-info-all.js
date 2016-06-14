@@ -5,20 +5,36 @@
 (function() {
     info.controller('AllInfoCtrl', function ($scope, $location, $rootScope, $http, tempData) {
         $scope.infos = [];
+        $scope.currentPage = 1;
+        $scope.pages = [];
 
-        $scope.getAllInfos = function() {
-            $http.get(URL + '/info/all')
+        if ($rootScope.user == null) {
+            $location.url('logon');
+        }
+        
+        $scope.getInfos = function(page) {
+            $http.get(URL + '/info/infos?pageId=' + page)
                 .success(function (data, status, headers, config) {
-                    for (var i = 0; i < data.length; i++) {
-                        info = data[i];
-                        if (data[i].description != null) {
-                            info.ps = data[i].description.split('\n');
+                    var ret = data['ret'];
+                    if (ret == 0) {
+                        $scope.totalPage = data['totalPage'];
+                        $scope.pages = [];
+                        for (i = 0; i < $scope.totalPage; i++) {
+                            $scope.pages.push(i + 1);
                         }
-                        $scope.infos.push(info);
+                        $scope.infos = [];
+                        var infos = data['infos'];
+                        for (var i = 0; i < infos.length; i++) {
+                            info = infos[i];
+                            if (infos[i].description != null) {
+                                info.ps = infos[i].description.split('\n');
+                            }
+                            $scope.infos.push(info);
+                        }
                     }
                 });
         };
-        $scope.getAllInfos();
+        $scope.getInfos(0);
 
         $scope.getAllSources = function() {
             $http.get(URL + '/source/all')
@@ -52,6 +68,35 @@
 
         $scope.isAdmin = function () {
             return $rootScope.user != null && $rootScope.user.role === 'admin';
+        };
+
+        $scope.next = function () {
+            if ($scope.currentPage < $scope.totalPage) {
+                $scope.currentPage++;
+                $scope.loadPage($scope.currentPage);
+            }
+        };
+
+        $scope.prev = function () {
+            if ($scope.currentPage > 1) {
+                $scope.currentPage--;
+                $scope.loadPage($scope.currentPage);
+            }
+        };
+
+        $scope.first = function () {
+            $scope.currentPage = 1;
+            $scope.loadPage($scope.currentPage);
+        };
+
+        $scope.last = function () {
+            $scope.currentPage = $scope.totalPage;
+            $scope.loadPage($scope.currentPage);
+        };
+
+        $scope.loadPage = function (page) {
+            $scope.currentPage = page;
+            $scope.getInfos(page - 1);
         };
     });
 })();

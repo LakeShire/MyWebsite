@@ -34,10 +34,10 @@ function removeByValue(arr, val) {
     
     app.config(function ($routeProvider) {
         $routeProvider.when('/', {
-            templateUrl : 'info/all.html',
+            templateUrl : 'info/all_admin.html',
             controller : 'AllInfoCtrl'
         }).when('/info', {
-            templateUrl : 'info/all.html',
+            templateUrl : 'info/all_admin.html',
             controller : 'AllInfoCtrl'
         }).when('/info/all', {
             templateUrl : 'info/all.html',
@@ -46,22 +46,22 @@ function removeByValue(arr, val) {
             templateUrl : 'info/add.html',
             controller : 'AddInfoCtrl'
         }).when('/info/view', {
-            templateUrl : 'info/view.html',
+            templateUrl : 'info/view_admin.html',
             controller : 'ViewInfoCtrl'
         }).when('/info/edit', {
             templateUrl : 'info/edit.html',
             controller : 'EditInfoCtrl'
         }).when('/source', {
-            templateUrl : 'source/all.html',
+            templateUrl : 'source/all_admin.html',
             controller : 'AllSourceCtrl'
         }).when('/source/all', {
-            templateUrl : 'source/all.html',
+            templateUrl : 'source/all_admin.html',
             controller : 'AllSourceCtrl'
         }).when('/source/add', {
             templateUrl : 'source/add.html',
             controller : 'AddSourceCtrl'
         }).when('/source/view', {
-            templateUrl : 'source/view.html',
+            templateUrl : 'source/view_admin.html',
             controller : 'ViewSourceCtrl'
         }).when('/source/edit', {
             templateUrl : 'source/edit.html',
@@ -73,7 +73,7 @@ function removeByValue(arr, val) {
             templateUrl : 'user/all.html',
             controller : 'AllUserCtrl'
         }).when('/user/view', {
-            templateUrl : 'user/view.html',
+            templateUrl : 'user/view_admin.html',
             controller : 'ViewUserCtrl'
         }).when('/user/edit', {
             templateUrl : 'user/edit.html',

@@ -1,19 +1,97 @@
-<div>
-    <!--<div class="well">-->
-        <!--<button class="btn btn-primary" ng-click="add()">添加</button>-->
-    <!--</div>-->
-    <table class="table table-bordered">
-        <tbody ng-repeat="user in users">
-            <tr>
-            <td style="display:table-cell; vertical-align:middle">{{ user.name }}</td>
-            <td style="display:table-cell; vertical-align:middle">{{ user.email }}</td>
-            <td style="display:table-cell; vertical-align:middle">{{ role(user.role) }}</td>
-            <td style="display: flex; justify-content: space-around;">
-                <button class="btn btn-primary btn-sm" ng-click="view(user)">查看</button>
-                <button class="btn btn-primary btn-sm" ng-click="edit(user)">编辑</button>
-                <button class="btn btn-primary btn-sm" ng-click="delete(user)">删除</button>
-            </td>
-            </tr>
-        </tbody>
-    </table>
+<!--<ul class="breadcrumb">-->
+    <!--<li>-->
+        <!--<i class="icon-home"></i>-->
+        <!--<a href="admin.html">首页</a>-->
+        <!--<i class="icon-angle-right"></i>-->
+    <!--</li>-->
+    <!--<li><a href="#/user/all">用户</a></li>-->
+<!--</ul>-->
+
+<!--<div>-->
+    <!--&lt;!&ndash;<div class="well">&ndash;&gt;-->
+        <!--&lt;!&ndash;<button class="btn btn-primary" ng-click="add()">添加</button>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--<table class="table table-bordered">-->
+        <!--<tbody ng-repeat="user in users">-->
+            <!--<tr>-->
+            <!--<td style="display:table-cell; vertical-align:middle">{{ user.name }}</td>-->
+            <!--<td style="display:table-cell; vertical-align:middle">{{ user.email }}</td>-->
+            <!--<td style="display:table-cell; vertical-align:middle">{{ role(user.role) }}</td>-->
+            <!--<td style="display: flex; justify-content: space-around;">-->
+                <!--<button class="btn btn-primary btn-sm" ng-click="view(user)">查看</button>-->
+                <!--<button class="btn btn-primary btn-sm" ng-click="edit(user)">编辑</button>-->
+                <!--<button class="btn btn-primary btn-sm" ng-click="delete(user)">删除</button>-->
+            <!--</td>-->
+            <!--</tr>-->
+        <!--</tbody>-->
+    <!--</table>-->
+<!--</div>-->
+
+<div class="row-fluid sortable">
+    <div class="box span12">
+        <div class="box-header" data-original-title>
+            <h2><i class="halflings-icon leaf"></i><span class="break"></span>用户</h2>
+            <div class="box-icon">
+                <a href="" class="btn-setting" ng-click="add()"><i class="halflings-icon plus"></i></a>
+                <!--<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>-->
+                <!--<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>-->
+            </div>
+        </div>
+        <div class="box-content">
+            <table class="table table-bordered bootstrap-datatable datatable">
+                <thead>
+                <tr>
+                    <th style="text-align: center;">用户名</th>
+                    <th style="text-align: center;">头像</th>
+                    <th style="text-align: center;">邮箱</th>
+                    <th style="text-align: center;">操作</th>
+                </tr>
+                </thead>
+                <tbody ng-repeat="user in users">
+                <tr ng-class="{ 'info' : ($index % 2 == 0)}" style="height: 32px;">
+                    <td style="text-align: center; line-height: 32px;">{{ user.name }}</td>
+                    <td style="text-align: center; line-height: 32px;"><img ng-src="{{ user.avatar }}" style="width: 24px; height: 24px;"></td>
+                    <td style="text-align: center; line-height: 32px;">{{ user.email}}</td>
+                    <td style="text-align: center;">
+                        <a class="btn btn-success" href="" ng-click="view(user)">
+                            <i class="halflings-icon white zoom-in"></i>
+                        </a>
+                        <a class="btn btn-info" href="" ng-click="edit(user)">
+                            <i class="halflings-icon white edit"></i>
+                        </a>
+                        <a class="btn btn-danger" href="" ng-click="delete(user)">
+                            <i class="halflings-icon white trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="row-fluid">
+                <!--<div class="span12">-->
+                <!--<div class="dataTables_info" id="DataTables_Table_0_info">Showing 1 to 10 of 32 entries</div>-->
+                <!--</div>-->
+                <div class="span12 center">
+                    <div class="dataTables_paginate paging_bootstrap pagination">
+                        <ul class="pagination" ng-show="totalPage > 1">
+                            <li ng-class="{ true : 'active' }[currentPage == 1]"><a href="javascript:void(0)" ng-click="first()">首页</a></li>
+                            <li ng-class="{ true : 'disabled' }[currentPage == 1]"><a href="javascript:void(0);" ng-click="prev()">上一页</a></li>
+                            <li ng-repeat="page in pages" ng-class="{'active' : isSelect(page)}"><a href="javascript:void(0);" ng-click="loadPage(page)">{{ page }}</a></li>
+                            <li ng-class="{ true : 'disabled'}[currentPage == totalPage]"><a href="javascript:void(0);" ng-click="next()">下一页</a></li>
+                            <li ng-class="{ true : 'active'}[currentPage == totalPage]"><a href="javascript:void(0)" ng-click="last()">末页</a></li>
+                        </ul>
+                        <!--<ul>-->
+                        <!--<li class="prev disabled"><a href="#">← Previous</a></li>-->
+                        <!--<li class="active"><a href="#">1</a></li>-->
+                        <!--<li><a href="#">2</a></li>-->
+                        <!--<li><a href="#">3</a></li>-->
+                        <!--<li><a href="#">4</a></li>-->
+                        <!--<li class="next"><a href="#">Next → </a></li>-->
+                        <!--</ul>-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -6,9 +6,14 @@
     info.controller('AllUserCtrl', function ($scope, $location, $rootScope, $http, tempData) {
         $scope.users = [];
 
+        if ($rootScope.user == null) {
+            $location.url('logon');
+        }
+        
         $scope.getAllUsers = function() {
             $http.get(URL + '/user/all')
                 .success(function (data, status, headers, config) {
+                    console.log(data);
                     $scope.users = data;
                 });
         };

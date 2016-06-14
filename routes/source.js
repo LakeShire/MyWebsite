@@ -30,6 +30,14 @@ router.get('/view.html', function(req, res, next) {
     res.render('source/view', { title: 'Express' });
 });
 
+router.get('/all_admin.html', function(req, res, next) {
+    res.render('source/all_admin', { title: 'Express' });
+});
+
+router.get('/view_admin.html', function(req, res, next) {
+    res.render('source/view_admin', { title: 'Express' });
+});
+
 router.get('/edit.html', function(req, res, next) {
     res.render('source/edit', { title: 'Express' });
 });

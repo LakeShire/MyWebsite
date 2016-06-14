@@ -29,6 +29,10 @@ router.get('/view.html', function(req, res, next) {
   res.render('user/view', { title: 'Express' });
 });
 
+router.get('/view_admin.html', function(req, res, next) {
+  res.render('user/view_admin', { title: 'Express' });
+});
+
 router.get('/edit.html', function(req, res, next) {
   res.render('user/edit', { title: 'Express' });
 });

@@ -8,6 +8,10 @@
 
         $rootScope.user = $cookieStore.get('user');
 
+        if ($rootScope.user == null) {
+            $location.url('logon');
+        }
+
         $scope.isMode = function (mode) {
             return $rootScope.mode == mode;
         };
@@ -36,6 +40,7 @@
         $scope.logout = function () {
             $cookieStore.put("user", null);
             $rootScope.user = null;
+            $location.url('logon');
         };
 
         $scope.shouldShow = function () {

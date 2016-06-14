@@ -95,7 +95,8 @@ router.post('/add', function(req, res, next) {
                         }
                         user.collections.push({
                             '_id': info._id,
-                            'title': info.title
+                            'title': info.title,
+                            'cover': info.cover
                         });
                         collection.save(user, function (err, data) {
                             if (err) {

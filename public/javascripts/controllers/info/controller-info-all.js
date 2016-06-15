@@ -8,7 +8,7 @@
         $scope.currentPage = 1;
         $scope.pages = [];
 
-        if ($rootScope.user == null) {
+        if ($rootScope.user == null && $rootScope.admin) {
             $location.url('logon');
         }
         

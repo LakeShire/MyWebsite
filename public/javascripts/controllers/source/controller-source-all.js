@@ -5,7 +5,7 @@
 (function() {
     source.controller('AllSourceCtrl', function ($scope, $location, $rootScope, $http, tempData) {
 
-        if ($rootScope.user == null) {
+        if ($rootScope.user == null && $rootScope.admin) {
             $location.url('logon');
         }
         

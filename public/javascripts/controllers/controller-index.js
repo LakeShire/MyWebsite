@@ -55,6 +55,7 @@
         // };
 
         $rootScope.mode = 'info';
+        $rootScope.admin = false;
 
         $rootScope.user = $cookieStore.get('user');
 
@@ -72,6 +73,20 @@
                     $location.url('/user/view');
                 }
             }
+        };
+
+        $scope.isLoggedOn = function () {
+            return $rootScope.user != null;
+        };
+
+        $scope.logout = function () {
+            $cookieStore.put("user", null);
+            $rootScope.user = null;
+        };
+
+        $scope.logon = function () {
+            $scope.setMode('logon');
+            $location.url('logon');
         };
     });
 })();

@@ -183,72 +183,57 @@
     </head>
     <body ng-app="webapp" ng-controller="IndexCtrl">
 
-    <div class="navbar">
-    <div class="navbar-inner">
-    <div class="container-fluid">
-        <!--<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">-->
-        <!--<span class="icon-bar"></span>-->
-        <!--<span class="icon-bar"></span>-->
-        <!--<span class="icon-bar"></span>-->
-        <!--</a>-->
-        <a class="brand" href="admin.html"><span>优惠信息管理</span></a>
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="brand" href="#/"><span>优惠信息聚合</span></a>
 
-        <!-- start: Header Menu -->
-        <div class="nav-no-collapse header-nav">
-            <ul class="nav">
-                <li class="dropdown" ng-class="{ 'active' : isMode('info') }" >
-                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#/" ng-click="setMode('info')">
-                        <i class="halflings-icon white warning-sign"></i>
-                        优惠信息
-                    </a>
-                </li>
+                    <div class="nav-no-collapse header-nav">
+                        <ul class="nav">
+                            <li class="dropdown" ng-class="{ 'active' : isMode('info') }" >
+                                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#/" ng-click="setMode('info')">
+                                    <i class="halflings-icon white warning-sign"></i>
+                                    优惠信息
+                                </a>
+                            </li>
 
-                <li class="dropdown" ng-class="{ 'active' : isMode('source') }">
-                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#/source/all" ng-click="setMode('source')">
-                        <i class="halflings-icon white tasks"></i>
-                        信息源
-                    </a>
-                </li>
-            </ul>
+                            <li class="dropdown" ng-class="{ 'active' : isMode('source') }">
+                                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#/source/all" ng-click="setMode('source')">
+                                    <i class="halflings-icon white tasks"></i>
+                                    信息源
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-no-collapse header-nav">
+                        <ul class="nav pull-right">
+                            <li class="dropdown">
+                                <img ng-src="{{ user.avatar }}" style="width: 24px; height: 24px" ng-show="isLoggedOn()">
+                                <a class="btn dropdown-toggle" data-toggle="dropdown" href="">
+                                    <i class="halflings-icon white user" ng-hide="isLoggedOn()"></i> {{ user.name }}
+                                    <span ng-hide="isLoggedOn()">我</span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-menu-title">
+                                        <span>账户设置</span>
+                                    </li>
+                                    <li ng-show="isLoggedOn()"><a href="#/user/view"><i class="halflings-icon user"></i>个人信息</a>
+                                    </li>
+                                    <li><a href="" ng-click="logout()" ng-show="isLoggedOn()"><i class="halflings-icon off"></i> 登出</a></li>
+                                    <li><a href="" ng-click="logon()" ng-hide="isLoggedOn()"><i class="halflings-icon off"></i>登录</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
         </div>
-
-        <div class="nav-no-collapse header-nav">
-            <ul class="nav pull-right">
-                <li>
-                    <a class="btn" href="#/user/view" ng-click="setMode('user')">
-                        <i class="halflings-icon white user"></i>我
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    </div>
-    </div>
-
-
-        <!--<nav class="navbar navbar-default" role="navigation">-->
-            <!--<div class="navbar-header">-->
-                <!--<button type="button" class="navbar-toggle" data-toggle="collapse"-->
-                        <!--data-target="#example-navbar-collapse">-->
-                    <!--<span class="sr-only">切换导航</span>-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--<span class="icon-bar"></span>-->
-                <!--</button>-->
-                <!--<a class="navbar-brand" href="#/">优惠聚合</a>-->
-            <!--</div>-->
-            <!--<div class="collapse navbar-collapse" id="example-navbar-collapse">-->
-                <!--<ul class="nav navbar-nav">-->
-                    <!--<li class="{ 'active' : isMode('info') }"><a href="#/" ng-click="setMode('info')">优惠信息</a></li>-->
-                    <!--<li class="{ 'active' : isMode('source') }"><a href="#/source/all" ng-click="setMode('source')">源</a></li>-->
-                    <!--<li class="{ 'active' : isMode('user') }"><a href="" ng-click="setMode('user')">我</a></li>-->
-                <!--</ul>-->
-            <!--</div>-->
-        <!--</nav>-->
 
         <div>
-                <div ng-view style="min-height: 600px;"></div>
-                </div>
+            <div ng-view style="min-height: 800px;"></div>
         </div>
 
         <script src="javascripts/controllers/controller-logon.js"></script>

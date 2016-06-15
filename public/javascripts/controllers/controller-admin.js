@@ -5,7 +5,8 @@
 (function () {
     admin.controller('AdminCtrl', function ($cookieStore, $scope, $location, $rootScope, tempData) {
         $rootScope.mode = 'info';
-
+        $rootScope.admin = true;
+        
         $rootScope.user = $cookieStore.get('user');
 
         if ($rootScope.user == null) {

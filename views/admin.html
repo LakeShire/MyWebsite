@@ -34,6 +34,7 @@
 	</head>
 
 	<body ng-app="app" ng-controller="AdminCtrl">
+
 		<div class="navbar">
 			<div class="navbar-inner">
 				<div class="container-fluid">
@@ -43,9 +44,30 @@
 						<span class="icon-bar"></span>
 					</a>
 					<a class="brand" href="admin.html"><span>优惠信息管理</span></a>
+
+					<div class="nav-no-collapse header-nav">
+						<ul class="nav pull-right">
+							<li class="dropdown">
+								<img ng-src="{{ user.avatar }}" style="width: 24px; height: 24px" ng-show="isLoggedOn()">
+								<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+									{{ user.name }}
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li class="dropdown-menu-title">
+										<span>账户设置</span>
+									</li>
+									<li ng-show="isLoggedOn()"><a href="" ng-click="profile()"><i class="halflings-icon user"></i>个人信息</a></li>
+									<li><a href="" ng-click="logout()" ng-show="isLoggedOn()"><i class="halflings-icon off"></i>登出</a></li>
+									<li><a href="" ng-click="logon()" ng-hide="isLoggedOn()"><i class="halflings-icon off"></i>登录</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
+
 
 		<div class="container-fluid-full">
 			<div class="row-fluid">
@@ -66,7 +88,7 @@
 					</div>
 				</noscript>
 
-				<div id="content" class="span10" ng-view style="min-height: 780px"></div>
+				<div id="content" class="span10" ng-view style="min-height: 800px"></div>
 			</div>
 		</div>
 

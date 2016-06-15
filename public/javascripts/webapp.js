@@ -19,10 +19,10 @@ function removeByValue(arr, val) {
     info = angular.module('info', ['infinite-scroll']);
 
     //  信息源模块
-    source = angular.module('source', []);
+    source = angular.module('source', ['akoenig.deckgrid']);
 
     //  管理员模块
-    admin = angular.module('admin', ['ngCookies']);
+    // admin = angular.module('admin', ['ngCookies']);
 
     //  通用应用
     util = angular.module('util', []);
@@ -30,7 +30,7 @@ function removeByValue(arr, val) {
     //  登录注册
     logon = angular.module('logon', []);
 
-    var app = angular.module('webapp', ['admin', 'info', 'source', 'util', 'ngRoute', 'logon']);
+    var app = angular.module('webapp', ['info', 'source', 'util', 'ngCookies', 'ngRoute', 'logon']);
     
     app.config(function ($routeProvider) {
         $routeProvider.when('/', {

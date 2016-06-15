@@ -2005,7 +2005,7 @@ fieldset[disabled] .btn-link:focus {
 =================================================================== */
 
 .login-box {
-	width: 400px;
+	width: 380px;
 	margin: 100px auto;
 	background: rgb(245,245,245); /* Old browsers */
 	/* IE9 SVG, needs conditional override of 'filter' to 'none' */

@@ -1,71 +1,26 @@
+<form class="form-horizontal" name="LogonForm">
+    <fieldset>
+        <div class="input-prepend" title="Username">
+            <span class="add-on"><i class="halflings-icon user"></i></span>
+            <input class="input-large span10" name="name" id="username" type="text" ng-model="user.name" placeholder="请输入用户名" ng-blur="onBlurName()" required/>
+        </div>
+        <div class="alert alert-info" style="margin: 16px" ng-show="showError(LogonForm.name, 'required') && shouldShowName">请输入用户名</div>
+        <div class="clearfix"></div>
 
-<!--<form name="LogonForm" role="form" ng-submit="logon(user)">-->
-    <!--<div class="row">-->
-        <!--<div class="col-xs-12">-->
-            <!--<div class="form-group">-->
-                <!--<label>用户名</label>-->
-                <!--<input type="text" class="form-control" name="name" ng-model="user.name" placeholder="请输入用户名" ng-blur="onBlurName()" required>-->
-                <!--<div class="alert alert-info" style="margin-top: 10px" ng-show="showError(LogonForm.name, 'required') && shouldShowName">请输入用户名</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div class="row">-->
-        <!--<div class="col-xs-12">-->
-            <!--<div class="form-group">-->
-                <!--<label>密码</label>-->
-                <!--<input type="password" class="form-control" name="password" ng-model="user.password" placeholder="请输入密码" ng-blur="onBlurPassword()" required>-->
-                <!--<div class="alert alert-info" style="margin-top: 10px" ng-show="showError(LogonForm.password, 'required') && shouldShowPassword">请输入密码</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div class="row">-->
-        <!--<div class="col-xs-12">-->
-            <!--<div class="checkbox">-->
-                <!--<label>-->
-                    <!--<input type="checkbox"> 记住我-->
-                <!--</label>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div class="row">-->
-        <!--<div class="col-xs-4 col-xs-offset-4">-->
-            <!--<button type="submit" class="btn btn-primary btn-logon">登录</button>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</form>-->
-<!--<div class="alert alert-info" style="margin-top: 10px" ng-show="passwordError || userNotExist">{{logonErrorMsg}}</div>-->
+        <div class="input-prepend" title="Password">
+            <span class="add-on"><i class="halflings-icon lock"></i></span>
+            <input class="input-large span10" name="password" id="password" type="password" ng-model="user.password" placeholder="请输入密码" ng-blur="onBlurPassword()" required/>
+        </div>
+        <div class="alert alert-info" style="margin: 16px" ng-show="showError(LogonForm.password, 'required') && shouldShowPassword">请输入密码</div>
+        <div class="clearfix"></div>
 
-                <form class="form-horizontal" name="LogonForm">
-                    <fieldset>
-                        <div class="input-prepend" title="Username">
-                            <span class="add-on"><i class="halflings-icon user"></i></span>
-                            <input class="input-large span10" name="name" id="username" type="text" ng-model="user.name" placeholder="请输入用户名" ng-blur="onBlurName()" required/>
-                        </div>
-                        <div class="alert alert-info" style="margin: 16px" ng-show="showError(LogonForm.name, 'required') && shouldShowName">请输入用户名</div>
-                        <div class="clearfix"></div>
 
-                        <div class="input-prepend" title="Password">
-                            <span class="add-on"><i class="halflings-icon lock"></i></span>
-                            <input class="input-large span10" name="password" id="password" type="password" ng-model="user.password" placeholder="请输入密码" ng-blur="onBlurPassword()" required/>
-                        </div>
-                        <div class="alert alert-info" style="margin: 16px" ng-show="showError(LogonForm.password, 'required') && shouldShowPassword">请输入密码</div>
-                        <div class="clearfix"></div>
+        <div class="button-login">
+            <button type="submit" class="btn btn-primary" ng-click="logon(user)">登录</button>
+        </div>
+        <div class="clearfix"></div>
 
-                        <!--<label class="remember" for="remember"><input type="checkbox" id="remember" />记住我</label>-->
+        <div class="alert alert-info" style="margin: 16px" ng-show="passwordError || userNotExist">{{logonErrorMsg}}</div>
 
-                        <div class="button-login">
-                            <button type="submit" class="btn btn-primary" ng-click="logon(user)">登录</button>
-                        </div>
-                        <div class="clearfix"></div>
-
-                        <div class="alert alert-info" style="margin: 16px" ng-show="passwordError || userNotExist">{{logonErrorMsg}}</div>
-
-                    </fieldset>
-                </form>
-                <!--<hr>-->
-                <!--<p style="display: flex; justify-content: space-between; width: 128px">-->
-                    <!--<a href="#">注册</a><a href="#">忘记密码</a>-->
-                <!--</p>-->
-            </div><!--/span-->
-        </div><!--/row-->
-</div><!--/fluid-row-->
+    </fieldset>
+</form>

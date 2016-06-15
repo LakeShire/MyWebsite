@@ -5,10 +5,12 @@
 (function() {
     info.controller('ViewUserCtrl', function ($scope, $location, $rootScope, $cookieStore, $http, tempData) {
         $scope.user = tempData.getCurrentUser();
-        $scope.infos = $scope.user.collections;
+        $scope.infos = [];
         
         if ($scope.user == null) {
-            $location.url('user/');
+            $location.url('/');
+        } else {
+            $scope.infos = $scope.user.collections;
         }
 
         $scope.edit = function () {

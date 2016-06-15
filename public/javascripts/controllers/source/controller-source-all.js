@@ -4,7 +4,6 @@
 
 (function() {
     source.controller('AllSourceCtrl', function ($scope, $location, $rootScope, $http, tempData) {
-        $scope.sources = null;
 
         if ($rootScope.user == null) {
             $location.url('logon');
@@ -31,6 +30,7 @@
         };
 
         $scope.view = function (source) {
+            console.log('view');
             tempData.setCurrentSource(source);
             $location.url('/source/view');
         };

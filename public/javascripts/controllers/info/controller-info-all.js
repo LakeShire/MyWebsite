@@ -13,7 +13,7 @@
         }
         
         $scope.getInfos = function(page) {
-            $http.get(URL + '/info/infos?pageId=' + page + '&pageSize=10')
+            $http.get(URL + '/info/infos?pageId=' + page + '&pageSize=5')
                 .success(function (data, status, headers, config) {
                     var ret = data['ret'];
                     if (ret == 0) {
@@ -108,8 +108,8 @@
                 return;
             }
             $scope.busy = true;
-
-            $http.get(URL + '/info/infos?pageId=' + $scope.currentPage + '&pageSize=10')
+            
+            $http.get(URL + '/info/infos?pageId=' + $scope.currentPage + '&pageSize=5')
                 .success(function (data, status, headers, config) {
                     var ret = data['ret'];
                     if (ret == 0) {

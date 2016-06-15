@@ -25,7 +25,7 @@ function removeByValue(arr, val) {
     admin = angular.module('admin', ['ngCookies']);
 
     //  通用应用
-    util = angular.module('util', []);
+    util = angular.module('util', ['ngCookies']);
 
     //  登录注册
     logon = angular.module('logon', []);
